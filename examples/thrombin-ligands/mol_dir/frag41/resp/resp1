@@ -1,0 +1,28 @@
+Stage 1 of multimolecule multiconformation resp fit.
+ &cntrl
+
+ nmol    = 1,
+ ihfree  = 1,
+ ioutopt = 1,
+ iqopt   = 1,
+ qwt     = 0.00050
+
+ &end
+  1.000000
+  Mol 41 Conf 0
+    0   13
+    7    0
+    6    0
+    8    0
+    6    0
+    6    0
+    6    0
+    6    0
+   17    0
+   16    0
+    1    0
+    1    0
+    1    0
+    1    0
+
+

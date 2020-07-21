@@ -1,0 +1,2134 @@
+ Entering Gaussian System, Link 0=g09
+ Initial command:
+ /home/fb_chem/chemsoft/lx24-amd64/Gaussian_09_C.01_NBO_3.1_64_istanbul-64/g09/l1.exe /local/2400076.1.parallel_long/Gau-12220.inp -scrdir=/local/2400076.1.parallel_long/
+ Entering Link 1 = /home/fb_chem/chemsoft/lx24-amd64/Gaussian_09_C.01_NBO_3.1_64_istanbul-64/g09/l1.exe PID=     12221.
+  
+ Copyright (c) 1988,1990,1992,1993,1995,1998,2003,2009,2011,
+            Gaussian, Inc.  All Rights Reserved.
+  
+ This is part of the Gaussian(R) 09 program.  It is based on
+ the Gaussian(R) 03 system (copyright 2003, Gaussian, Inc.),
+ the Gaussian(R) 98 system (copyright 1998, Gaussian, Inc.),
+ the Gaussian(R) 94 system (copyright 1995, Gaussian, Inc.),
+ the Gaussian 92(TM) system (copyright 1992, Gaussian, Inc.),
+ the Gaussian 90(TM) system (copyright 1990, Gaussian, Inc.),
+ the Gaussian 88(TM) system (copyright 1988, Gaussian, Inc.),
+ the Gaussian 86(TM) system (copyright 1986, Carnegie Mellon
+ University), and the Gaussian 82(TM) system (copyright 1983,
+ Carnegie Mellon University). Gaussian is a federally registered
+ trademark of Gaussian, Inc.
+  
+ This software contains proprietary and confidential information,
+ including trade secrets, belonging to Gaussian, Inc.
+  
+ This software is provided under written license and may be
+ used, copied, transmitted, or stored only in accord with that
+ written license.
+  
+ The following legend is applicable only to US Government
+ contracts under FAR:
+  
+                    RESTRICTED RIGHTS LEGEND
+  
+ Use, reproduction and disclosure by the US Government is
+ subject to restrictions as set forth in subparagraphs (a)
+ and (c) of the Commercial Computer Software - Restricted
+ Rights clause in FAR 52.227-19.
+  
+ Gaussian, Inc.
+ 340 Quinnipiac St., Bldg. 40, Wallingford CT 06492
+  
+  
+ ---------------------------------------------------------------
+ Warning -- This program may not be used in any manner that
+ competes with the business of Gaussian, Inc. or will provide
+ assistance to any competitor of Gaussian, Inc.  The licensee
+ of this program is prohibited from giving any competitor of
+ Gaussian, Inc. access to this program.  By using this program,
+ the user acknowledges that Gaussian, Inc. is engaged in the
+ business of creating and licensing software in the field of
+ computational chemistry and represents and warrants to the
+ licensee that it is not a competitor of Gaussian, Inc. and that
+ it will not use this program in any manner prohibited above.
+ ---------------------------------------------------------------
+  
+
+ Cite this work as:
+ Gaussian 09, Revision C.01,
+ M. J. Frisch, G. W. Trucks, H. B. Schlegel, G. E. Scuseria, 
+ M. A. Robb, J. R. Cheeseman, G. Scalmani, V. Barone, B. Mennucci, 
+ G. A. Petersson, H. Nakatsuji, M. Caricato, X. Li, H. P. Hratchian, 
+ A. F. Izmaylov, J. Bloino, G. Zheng, J. L. Sonnenberg, M. Hada, 
+ M. Ehara, K. Toyota, R. Fukuda, J. Hasegawa, M. Ishida, T. Nakajima, 
+ Y. Honda, O. Kitao, H. Nakai, T. Vreven, J. A. Montgomery, Jr., 
+ J. E. Peralta, F. Ogliaro, M. Bearpark, J. J. Heyd, E. Brothers, 
+ K. N. Kudin, V. N. Staroverov, T. Keith, R. Kobayashi, J. Normand, 
+ K. Raghavachari, A. Rendell, J. C. Burant, S. S. Iyengar, J. Tomasi, 
+ M. Cossi, N. Rega, J. M. Millam, M. Klene, J. E. Knox, J. B. Cross, 
+ V. Bakken, C. Adamo, J. Jaramillo, R. Gomperts, R. E. Stratmann, 
+ O. Yazyev, A. J. Austin, R. Cammi, C. Pomelli, J. W. Ochterski, 
+ R. L. Martin, K. Morokuma, V. G. Zakrzewski, G. A. Voth, 
+ P. Salvador, J. J. Dannenberg, S. Dapprich, A. D. Daniels, 
+ O. Farkas, J. B. Foresman, J. V. Ortiz, J. Cioslowski, 
+ and D. J. Fox, Gaussian, Inc., Wallingford CT, 2010.
+ 
+ ******************************************
+ Gaussian 09:  AM64L-G09RevC.01 23-Sep-2011
+                17-Feb-2018 
+ ******************************************
+ %nprocs=2
+ Will use up to    2 processors via shared memory.
+ %chk=frag42-conf0.chk
+ ----------------------------------------------------------------------
+ #HF/6-31G* Geom=AllCheck Guess=Read Pop=(MK,ReadRadii) Integral=(Grid=
+ UltraFine) iop(6/33=2)
+ ----------------------------------------------------------------------
+ 1/29=7,38=1/1;
+ 2/12=2,40=1/2;
+ 3/5=1,6=6,7=1,11=9,14=-4,16=1,25=1,30=1,75=-5,116=-2/1,2,3;
+ 4/5=1/1;
+ 5/5=2,38=6/2;
+ 6/7=2,8=2,9=2,10=2,15=8,20=101,28=1,33=2/1,2;
+ 99/5=1,9=1/99;
+ Structure from the checkpoint file:  frag42-conf0.chk
+ -----------------------------
+ Optimization for frag42-conf0
+ -----------------------------
+ Charge =  0 Multiplicity = 1
+ Redundant internal coordinates found in file.
+ C,0,0.8901362812,-0.42057648,1.8105234845
+ C,0,0.3861333776,-1.0297590581,0.5058899812
+ C,0,2.5762019567,0.8905474537,2.9940294247
+ C,0,2.8724295281,0.5226008983,0.5834283382
+ N,0,2.0661782296,0.2956779948,1.7683038698
+ O,0,0.2600302772,-0.5714790271,2.8522672348
+ H,0,1.0989582375,-1.7469322569,0.0831689656
+ H,0,-0.5435798297,-1.5512596335,0.7350340176
+ H,0,0.1854338255,-0.2669192966,-0.254994322
+ H,0,3.5735188172,0.4946250661,3.2293114316
+ H,0,1.887975989,0.6506276381,3.8031852259
+ H,0,2.6559510446,1.9811887283,2.8896513956
+ H,0,2.9693283788,1.5987258801,0.380699698
+ H,0,2.4311690831,0.050053587,-0.2926985725
+ H,0,3.8846307819,0.1158323731,0.7195211523
+ Recover connectivity data from disk.
+                          Input orientation:                          
+ ---------------------------------------------------------------------
+ Center     Atomic      Atomic             Coordinates (Angstroms)
+ Number     Number       Type             X           Y           Z
+ ---------------------------------------------------------------------
+      1          6           0        0.890136   -0.420576    1.810523
+      2          6           0        0.386133   -1.029759    0.505890
+      3          6           0        2.576202    0.890547    2.994029
+      4          6           0        2.872430    0.522601    0.583428
+      5          7           0        2.066178    0.295678    1.768304
+      6          8           0        0.260030   -0.571479    2.852267
+      7          1           0        1.098958   -1.746932    0.083169
+      8          1           0       -0.543580   -1.551260    0.735034
+      9          1           0        0.185434   -0.266919   -0.254994
+     10          1           0        3.573519    0.494625    3.229311
+     11          1           0        1.887976    0.650628    3.803185
+     12          1           0        2.655951    1.981189    2.889651
+     13          1           0        2.969328    1.598726    0.380700
+     14          1           0        2.431169    0.050054   -0.292699
+     15          1           0        3.884631    0.115832    0.719521
+ ---------------------------------------------------------------------
+                    Distance matrix (angstroms):
+                    1          2          3          4          5
+     1  C    0.000000
+     2  C    1.525513   0.000000
+     3  C    2.441833   3.830772   0.000000
+     4  C    2.514922   2.932150   2.456447   0.000000
+     5  N    1.377635   2.484557   1.454784   1.451022   0.000000
+     6  O    1.226799   2.394036   2.742676   3.628949   2.277961
+     7  H    2.187825   1.095970   4.196624   2.923395   2.819122
+     8  H    2.119119   1.090338   4.560539   3.999125   3.360009
+     9  H    2.187825   1.095970   4.196624   2.923395   2.819122
+    10  H    3.170346   4.460964   1.098523   2.737336   2.108601
+    11  H    2.472623   3.993919   1.089013   3.369328   2.073279
+    12  H    3.170346   4.460964   1.098523   2.737336   2.108601
+    13  H    3.231875   3.687479   2.735975   1.099333   2.106908
+    14  H    2.649494   2.446612   3.395592   1.088857   2.107435
+    15  H    3.231875   3.687479   2.735975   1.099333   2.106908
+                    6          7          8          9         10
+     6  O    0.000000
+     7  H    3.123043   0.000000
+     8  H    2.467476   1.777962   0.000000
+     9  H    3.123043   1.771813   1.777962   0.000000
+    10  H    3.501135   4.587618   5.230446   4.919294   0.000000
+    11  H    2.246775   4.495483   4.491584   4.495483   1.787379
+    12  H    3.501135   4.919294   5.230446   4.587618   1.779655
+    13  H    4.261306   3.844507   4.731647   3.410983   3.114269
+    14  H    3.871816   2.268308   3.531228   2.268308   3.729231
+    15  H    4.261306   3.410983   4.731647   3.844507   2.557210
+                   11         12         13         14         15
+    11  H    0.000000
+    12  H    1.787379   0.000000
+    13  H    3.712360   2.557210   0.000000
+    14  H    4.175166   3.729231   1.772418   0.000000
+    15  H    3.712360   3.114269   1.775261   1.772418   0.000000
+ Stoichiometry    C4H9NO
+ Framework group  CS[SG(C4H3NO),X(H6)]
+ Deg. of freedom    24
+ Full point group                 CS      NOp   2
+ Largest Abelian subgroup         CS      NOp   2
+ Largest concise Abelian subgroup CS      NOp   2
+                         Standard orientation:                         
+ ---------------------------------------------------------------------
+ Center     Atomic      Atomic             Coordinates (Angstroms)
+ Number     Number       Type             X           Y           Z
+ ---------------------------------------------------------------------
+      1          6           0        0.189668    0.762503    0.000000
+      2          6           0       -1.051918    1.648873    0.000000
+      3          6           0        1.161915   -1.477427    0.000000
+      4          6           0       -1.286087   -1.273911    0.000000
+      5          7           0        0.000000   -0.602013    0.000000
+      6          8           0        1.310524    1.261219    0.000000
+      7          1           0       -1.675889    1.484615    0.885906
+      8          1           0       -0.706188    2.682947    0.000000
+      9          1           0       -1.675889    1.484615   -0.885906
+     10          1           0        1.159857   -2.121598    0.889827
+     11          1           0        2.057444   -0.857768    0.000000
+     12          1           0        1.159857   -2.121598   -0.889827
+     13          1           0       -1.388934   -1.914276   -0.887631
+     14          1           0       -2.106987   -0.558555    0.000000
+     15          1           0       -1.388934   -1.914276    0.887631
+ ---------------------------------------------------------------------
+ Rotational constants (GHZ):      4.8948262      3.3778051      2.0769019
+ Standard basis: 6-31G(d) (6D, 7F)
+ There are    78 symmetry adapted basis functions of A'  symmetry.
+ There are    30 symmetry adapted basis functions of A"  symmetry.
+ Integral buffers will be    131072 words long.
+ Raffenetti 1 integral format.
+ Two-electron integral symmetry is turned on.
+   108 basis functions,   204 primitive gaussians,   108 cartesian basis functions
+    24 alpha electrons       24 beta electrons
+       nuclear repulsion energy       249.8937047115 Hartrees.
+ NAtoms=   15 NActive=   15 NUniq=   12 SFac= 1.56D+00 NAtFMM=   60 NAOKFM=F Big=F
+ One-electron integrals computed using PRISM.
+ NBasis=   108 RedAO= T  NBF=    78    30
+ NBsUse=   108 1.00D-06 NBFU=    78    30
+ Initial guess read from the checkpoint file:  frag42-conf0.chk
+ B after Tr=     0.000000    0.000000    0.000000
+         Rot=    1.000000    0.000000    0.000000    0.000000 Ang=   0.00 deg.
+ Initial guess orbital symmetries:
+       Occupied  (A') (A') (A') (A') (A') (A') (A') (A') (A') (A')
+                 (A') (A') (A') (A") (A') (A") (A') (A") (A') (A')
+                 (A') (A") (A') (A")
+       Virtual   (A") (A') (A') (A') (A') (A') (A") (A") (A') (A")
+                 (A') (A') (A') (A') (A') (A') (A") (A') (A') (A")
+                 (A") (A') (A') (A') (A") (A') (A') (A") (A') (A')
+                 (A') (A") (A') (A") (A') (A") (A') (A') (A') (A')
+                 (A") (A') (A') (A') (A") (A') (A") (A') (A") (A')
+                 (A') (A') (A') (A") (A') (A") (A') (A') (A') (A")
+                 (A") (A') (A') (A") (A") (A') (A') (A') (A") (A')
+                 (A") (A') (A') (A") (A') (A') (A') (A') (A') (A')
+                 (A') (A') (A') (A')
+ Requested convergence on RMS density matrix=1.00D-08 within 128 cycles.
+ Requested convergence on MAX density matrix=1.00D-06.
+ Requested convergence on             energy=1.00D-06.
+ No special actions if energy rises.
+ Keep R1 ints in memory in canonical form, NReq=18200219.
+ SCF Done:  E(RHF) =  -286.027564903     A.U. after   13 cycles
+             Convg  =    0.4652D-08             -V/T =  2.0026
+
+ **********************************************************************
+
+            Population analysis using the SCF density.
+
+ **********************************************************************
+
+ Orbital symmetries:
+ BldTbl:  Degeneracy threshold= 1.00D-02
+       Occupied  (A') (A') (A') (A') (A') (A') (A') (A') (A') (A')
+                 (A') (A') (A') (A") (A') (A") (A') (A') (A") (A')
+                 (A') (A") (A') (A")
+       Virtual   (A") (A') (A') (A') (A') (A') (A") (A") (A") (A')
+                 (A') (A') (A') (A') (A') (A') (A") (A') (A") (A')
+                 (A") (A') (A') (A") (A') (A') (A') (A') (A") (A')
+                 (A') (A") (A') (A") (A') (A") (A') (A') (A') (A')
+                 (A') (A") (A') (A') (A") (A') (A") (A') (A") (A')
+                 (A') (A') (A') (A") (A') (A") (A') (A') (A") (A')
+                 (A") (A') (A') (A") (A") (A') (A') (A') (A") (A')
+                 (A") (A') (A') (A") (A') (A') (A') (A') (A') (A')
+                 (A') (A') (A') (A')
+ The electronic state is 1-A'.
+ Alpha  occ. eigenvalues --  -20.51561 -15.58886 -11.35028 -11.27235 -11.25208
+ Alpha  occ. eigenvalues --  -11.23612  -1.36831  -1.23817  -1.01141  -0.96947
+ Alpha  occ. eigenvalues --   -0.91410  -0.73633  -0.67804  -0.65379  -0.64820
+ Alpha  occ. eigenvalues --   -0.58700  -0.57236  -0.56308  -0.55689  -0.54546
+ Alpha  occ. eigenvalues --   -0.52629  -0.49817  -0.41058  -0.36457
+ Alpha virt. eigenvalues --    0.19720   0.22061   0.25649   0.29254   0.29948
+ Alpha virt. eigenvalues --    0.30914   0.31105   0.31927   0.34202   0.34717
+ Alpha virt. eigenvalues --    0.35722   0.38782   0.43855   0.50029   0.57052
+ Alpha virt. eigenvalues --    0.69145   0.70787   0.73557   0.75943   0.76681
+ Alpha virt. eigenvalues --    0.81891   0.88051   0.90330   0.93071   0.93616
+ Alpha virt. eigenvalues --    0.94689   0.98436   1.06040   1.07180   1.10906
+ Alpha virt. eigenvalues --    1.12512   1.13427   1.13932   1.15249   1.17421
+ Alpha virt. eigenvalues --    1.19818   1.20528   1.22785   1.24190   1.27811
+ Alpha virt. eigenvalues --    1.30988   1.35614   1.42971   1.55401   1.59503
+ Alpha virt. eigenvalues --    1.65149   1.66819   1.68242   1.74730   1.76505
+ Alpha virt. eigenvalues --    1.92470   2.04349   2.07546   2.08316   2.17666
+ Alpha virt. eigenvalues --    2.18633   2.22353   2.25919   2.30753   2.31013
+ Alpha virt. eigenvalues --    2.38253   2.40505   2.42094   2.52537   2.55538
+ Alpha virt. eigenvalues --    2.57533   2.59853   2.63010   2.71138   2.71880
+ Alpha virt. eigenvalues --    2.84889   2.86392   2.94585   2.99995   3.03492
+ Alpha virt. eigenvalues --    3.29983   3.36641   3.54773   4.40672   4.43641
+ Alpha virt. eigenvalues --    4.58829   4.70459   4.75938   4.92565
+          Condensed to atoms (all electrons):
+              1          2          3          4          5          6
+     1  C    4.141828   0.358857  -0.028588  -0.024546   0.282245   0.602644
+     2  C    0.358857   5.292298   0.003574  -0.002711  -0.113094  -0.072501
+     3  C   -0.028588   0.003574   4.965220  -0.051512   0.219362  -0.008203
+     4  C   -0.024546  -0.002711  -0.051512   4.931081   0.232942   0.001806
+     5  N    0.282245  -0.113094   0.219362   0.232942   7.380226  -0.097580
+     6  O    0.602644  -0.072501  -0.008203   0.001806  -0.097580   8.179519
+     7  H   -0.028153   0.373872  -0.000147  -0.002651   0.002856   0.001195
+     8  H   -0.033662   0.384689  -0.000072   0.000281   0.003624   0.004454
+     9  H   -0.028153   0.373872  -0.000147  -0.002651   0.002856   0.001195
+    10  H    0.001195  -0.000064   0.398693  -0.002004  -0.049073   0.000454
+    11  H   -0.004545   0.000593   0.395039   0.003180  -0.031166   0.012681
+    12  H    0.001195  -0.000064   0.398693  -0.002004  -0.049073   0.000454
+    13  H    0.000600  -0.000041  -0.001585   0.399001  -0.050102  -0.000016
+    14  H   -0.004283  -0.001762   0.003473   0.400032  -0.033333   0.000060
+    15  H    0.000600  -0.000041  -0.001585   0.399001  -0.050102  -0.000016
+              7          8          9         10         11         12
+     1  C   -0.028153  -0.033662  -0.028153   0.001195  -0.004545   0.001195
+     2  C    0.373872   0.384689   0.373872  -0.000064   0.000593  -0.000064
+     3  C   -0.000147  -0.000072  -0.000147   0.398693   0.395039   0.398693
+     4  C   -0.002651   0.000281  -0.002651  -0.002004   0.003180  -0.002004
+     5  N    0.002856   0.003624   0.002856  -0.049073  -0.031166  -0.049073
+     6  O    0.001195   0.004454   0.001195   0.000454   0.012681   0.000454
+     7  H    0.513831  -0.018878  -0.026856   0.000009  -0.000017  -0.000003
+     8  H   -0.018878   0.457015  -0.018878   0.000002  -0.000011   0.000002
+     9  H   -0.026856  -0.018878   0.513831  -0.000003  -0.000017   0.000009
+    10  H    0.000009   0.000002  -0.000003   0.550883  -0.021589  -0.041562
+    11  H   -0.000017  -0.000011  -0.000017  -0.021589   0.428879  -0.021589
+    12  H   -0.000003   0.000002   0.000009  -0.041562  -0.021589   0.550883
+    13  H    0.000084  -0.000004   0.000112  -0.001118  -0.000048   0.004278
+    14  H   -0.001941   0.000284  -0.001941  -0.000039  -0.000094  -0.000039
+    15  H    0.000112  -0.000004   0.000084   0.004278  -0.000048  -0.001118
+             13         14         15
+     1  C    0.000600  -0.004283   0.000600
+     2  C   -0.000041  -0.001762  -0.000041
+     3  C   -0.001585   0.003473  -0.001585
+     4  C    0.399001   0.400032   0.399001
+     5  N   -0.050102  -0.033333  -0.050102
+     6  O   -0.000016   0.000060  -0.000016
+     7  H    0.000084  -0.001941   0.000112
+     8  H   -0.000004   0.000284  -0.000004
+     9  H    0.000112  -0.001941   0.000084
+    10  H   -0.001118  -0.000039   0.004278
+    11  H   -0.000048  -0.000094  -0.000048
+    12  H    0.004278  -0.000039  -0.001118
+    13  H    0.545567  -0.025890  -0.042686
+    14  H   -0.025890   0.505318  -0.025890
+    15  H   -0.042686  -0.025890   0.545567
+ Mulliken atomic charges:
+              1
+     1  C    0.762766
+     2  C   -0.597479
+     3  C   -0.292218
+     4  C   -0.279247
+     5  N   -0.650584
+     6  O   -0.626145
+     7  H    0.186688
+     8  H    0.221156
+     9  H    0.186688
+    10  H    0.159940
+    11  H    0.238753
+    12  H    0.159940
+    13  H    0.171849
+    14  H    0.186046
+    15  H    0.171849
+ Sum of Mulliken atomic charges =   0.00000
+ Mulliken charges with hydrogens summed into heavy atoms:
+              1
+     1  C    0.762766
+     2  C   -0.002947
+     3  C    0.266415
+     4  C    0.250497
+     5  N   -0.650584
+     6  O   -0.626145
+ Sum of Mulliken charges with hydrogens summed into heavy atoms =   0.00000
+ DipInt: DoE/N= T F RetVal/Mat= T F Init=T NMatP=  1 IDeriv=0 Min/MaxMlt=  0  4
+ Entering OneElI...
+ OneElI was handed    33522386 working-precision words.
+ Multipole integrals L=0 to 4 MinM= 0 MaxM= 0.
+ Requested accuracy = 0.1000D-12
+ PrsmSu:  NPrtUS=   1 ThrOK=F IAlg=1 NPAlg=1 LenDen=           0.
+ Prism:   IPart=     0 DynPar=F LinDyn=F Incr=           8.
+ PRISM was handed    33441886 working-precision words and   891 shell-pairs
+ IPart=  0 NShTot=         891 NBatch=          41 AvBLen=        21.7
+ PrSmSu:  NxtVal=              9.
+ Electronic moments (au):
+        -48.00000000         -1.31511191         -0.88203100          0.00000000
+       -243.06825024       -338.12842715        -44.85123159         10.07782273
+          0.00000000          0.00000000         30.24847993        -29.64617824
+          0.00000000         49.86015941         28.90321503          0.00000000
+         20.68993263         27.95788013          0.00000000          0.00000000
+      -2399.88988224      -4249.43927829       -195.44550415         12.96009283
+          0.00000000        543.87150884          0.00000000          0.00000000
+          0.00000000      -1891.95242636       -284.24955103       -424.75643816
+          0.00000000          0.00000000         56.92393705
+ Electronic spatial extent (au):  <R**2>=            626.0479
+ DipInt: DoE/N= F T RetVal/Mat= T F Init=T NMatP=  1 IDeriv=0 Min/MaxMlt=  0  4
+ Nuclear    moments (au):
+         48.00000000          0.00000000          0.00000000          0.00000000
+        214.10821465        310.26379996         16.88764128        -13.74359052
+          0.00000000          0.00000000        -33.31470463         28.67122357
+          0.00000000        -57.21799947        -38.44298486          0.00000000
+        -20.12684765        -27.30282408          0.00000000          0.00000000
+       1568.77953249       3079.42369491         47.53269263          0.64289273
+          0.00000000       -529.09569548          0.00000000          0.00000000
+          0.00000000       1537.15202037        122.15352212        208.65666670
+          0.00000000          0.00000000        -46.06871201
+ Total      moments (au):
+          0.00000000         -1.31511191         -0.88203100          0.00000000
+        -28.96003559        -27.86462720        -27.96359031         -3.66576779
+          0.00000000          0.00000000         -3.06622470         -0.97495467
+          0.00000000         -7.35784007         -9.53976983          0.00000000
+          0.56308498          0.65505605          0.00000000          0.00000000
+       -831.11034975      -1170.01558339       -147.91281153         13.60298556
+          0.00000000         14.77581336          0.00000000          0.00000000
+          0.00000000       -354.80040599       -162.09602891       -216.09977146
+          0.00000000          0.00000000         10.85522504
+ Traceless Quadrup. (au):
+         -0.69728456          0.39812384          0.29916072         -3.66576779
+          0.00000000          0.00000000
+ Charge=              0.0000 electrons
+ Dipole moment (field-independent basis, Debye):
+    X=             -3.3427    Y=             -2.2419    Z=              0.0000  Tot=              4.0249
+ Quadrupole moment (field-independent basis, Debye-Ang):
+   XX=            -38.9522   YY=            -37.4789   ZZ=            -37.6120
+   XY=             -4.9306   XZ=              0.0000   YZ=              0.0000
+ Traceless Quadrupole moment (field-independent basis, Debye-Ang):
+   XX=             -0.9379   YY=              0.5355   ZZ=              0.4024
+   XY=             -4.9306   XZ=              0.0000   YZ=              0.0000
+ Octapole moment (field-independent basis, Debye-Ang**2):
+  XXX=             -2.1824  YYY=             -0.6939  ZZZ=              0.0000  XYY=             -5.2370
+  XXY=             -6.7900  XXZ=              0.0000  XZZ=              0.4008  YZZ=              0.4662
+  YYZ=              0.0000  XYZ=              0.0000
+ Hexadecapole moment (field-independent basis, Debye-Ang**3):
+ XXXX=           -313.0360 YYYY=           -440.6839 ZZZZ=            -55.7111 XXXY=              5.1235
+ XXXZ=              0.0000 YYYX=              5.5653 YYYZ=              0.0000 ZZZX=              0.0000
+ ZZZY=              0.0000 XXYY=           -133.6348 XXZZ=            -61.0531 YYZZ=            -81.3935
+ XXYZ=              0.0000 YYXZ=              0.0000 ZZXY=              4.0886
+ N-N= 2.498937047115D+02 E-N=-1.169025552700D+03  KE= 2.852980354295D+02
+ Symmetry A'   KE= 2.725334859552D+02
+ Symmetry A"   KE= 1.276454947432D+01
+ Entering OneElI...
+ OneElI was handed    33498575 working-precision words.
+ Calculate electrostatic properties
+    NBasis =   108  MinDer = 0  MaxDer = 0
+    NGrid  =    15  NMatD  =   1
+ Requested accuracy = 0.1000D-12
+ PrsmSu:  NPrtUS=   2 ThrOK=T IAlg=1 NPAlg=1 LenDen=           0.
+ Prism:   IPart=     0 DynPar=F LinDyn=F Incr=          65.
+ PRISM was handed    16695893 working-precision words and   870 shell-pairs
+ PRISM was handed    16695893 working-precision words and   870 shell-pairs
+ IPart=  0 NShTot=        6690 NBatch=         446 AvBLen=        15.0
+ IPart=  1 NShTot=        6360 NBatch=         424 AvBLen=        15.0
+ PrSmSu:  NxtVal=            131.
+ --------------------------------------------------------
+       Center         ----      EFG at Nuclei      ----
+                      3XX-RR        3YY-RR        3ZZ-RR
+ --------------------------------------------------------
+     1   Atom        0.386600      0.157978     -0.544578
+     2   Atom       -0.007877      0.009766     -0.001889
+     3   Atom       -0.082659     -0.005269      0.087928
+     4   Atom       -0.162542      0.047357      0.115185
+     5   Atom       -0.553644     -0.537807      1.091451
+     6   Atom       -0.488456      1.211995     -0.723539
+     7   Atom        0.003900      0.134610     -0.138511
+     8   Atom        0.104631     -0.257658      0.153027
+     9   Atom        0.003900      0.134610     -0.138511
+    10   Atom        0.138113     -0.002176     -0.135937
+    11   Atom       -0.166998      0.015243      0.151755
+    12   Atom        0.138113     -0.002176     -0.135937
+    13   Atom        0.130344      0.002330     -0.132674
+    14   Atom       -0.110831     -0.051267      0.162098
+    15   Atom        0.130344      0.002330     -0.132674
+ --------------------------------------------------------
+                        XY            XZ            YZ
+ --------------------------------------------------------
+     1   Atom       -0.014976      0.000000      0.000000
+     2   Atom        0.069706      0.000000      0.000000
+     3   Atom        0.239689      0.000000      0.000000
+     4   Atom       -0.159216      0.000000      0.000000
+     5   Atom       -0.021162      0.000000      0.000000
+     6   Atom       -1.040353      0.000000      0.000000
+     7   Atom       -0.035043      0.204244      0.057220
+     8   Atom       -0.129915      0.000000      0.000000
+     9   Atom       -0.035043     -0.204244     -0.057220
+    10   Atom        0.007025      0.005820      0.207495
+    11   Atom       -0.192913      0.000000      0.000000
+    12   Atom        0.007025     -0.005820     -0.207495
+    13   Atom       -0.027698     -0.028942     -0.203650
+    14   Atom        0.214949      0.000000      0.000000
+    15   Atom       -0.027698      0.028942      0.203650
+ --------------------------------------------------------
+
+
+ ---------------------------------------------------------------------------------
+              Nuclear Quadrupole in Principal Axis System
+ ---------------------------------------------------------------------------------
+
+       Atom             a.u.   MegaHertz   Gauss  10(-4) cm-1        Axes
+
+              Baa    -0.5446   -73.077   -26.076   -24.376  0.0000  0.0000  1.0000
+     1 C(13)  Bbb     0.1570    21.068     7.518     7.028  0.0651  0.9979  0.0000
+              Bcc     0.3876    52.009    18.558    17.348  0.9979 -0.0651  0.0000
+ 
+              Baa    -0.0693    -9.302    -3.319    -3.103  0.7502 -0.6612  0.0000
+     2 C(13)  Bbb    -0.0019    -0.253    -0.090    -0.085  0.0000  0.0000  1.0000
+              Bcc     0.0712     9.555     3.410     3.187  0.6612  0.7502  0.0000
+ 
+              Baa    -0.2868   -38.480   -13.731   -12.836  0.7614 -0.6483  0.0000
+     3 C(13)  Bbb     0.0879    11.799     4.210     3.936  0.0000  0.0000  1.0000
+              Bcc     0.1988    26.681     9.520     8.900  0.6483  0.7614  0.0000
+ 
+              Baa    -0.2483   -33.318   -11.889   -11.114  0.8804  0.4742  0.0000
+     4 C(13)  Bbb     0.1152    15.457     5.515     5.156  0.0000  0.0000  1.0000
+              Bcc     0.1331    17.861     6.373     5.958 -0.4742  0.8804  0.0000
+ 
+              Baa    -0.5683   -21.919    -7.821    -7.311  0.8217  0.5699  0.0000
+     5 N(14)  Bbb    -0.5231   -20.176    -7.199    -6.730 -0.5699  0.8217  0.0000
+              Bcc     1.0915    42.095    15.020    14.041  0.0000  0.0000  1.0000
+ 
+              Baa    -0.9818    71.043    25.350    23.698  0.9035  0.4285  0.0000
+     6 O(17)  Bbb    -0.7235    52.355    18.681    17.464  0.0000  0.0000  1.0000
+              Bcc     1.7054  -123.398   -44.032   -41.161 -0.4285  0.9035  0.0000
+ 
+              Baa    -0.2941  -156.897   -55.985   -52.335 -0.5709 -0.1543  0.8064
+     7 H(1)   Bbb     0.1421    75.821    27.055    25.291 -0.5220  0.8263 -0.2115
+              Bcc     0.1520    81.076    28.930    27.044  0.6337  0.5417  0.5523
+ 
+              Baa    -0.2994  -159.761   -57.007   -53.291  0.3061  0.9520  0.0000
+     8 H(1)   Bbb     0.1464    78.113    27.873    26.056  0.9520 -0.3061  0.0000
+              Bcc     0.1530    81.648    29.134    27.235  0.0000  0.0000  1.0000
+ 
+              Baa    -0.2941  -156.897   -55.985   -52.335  0.5709  0.1543  0.8064
+     9 H(1)   Bbb     0.1421    75.821    27.055    25.291 -0.5220  0.8263  0.2115
+              Bcc     0.1520    81.076    28.930    27.044  0.6337  0.5417 -0.5523
+ 
+              Baa    -0.2871  -153.164   -54.653   -51.090 -0.0013 -0.5887  0.8083
+    10 H(1)   Bbb     0.1329    70.929    25.309    23.659  0.8693 -0.4002 -0.2900
+              Bcc     0.1541    82.235    29.343    27.431  0.4943  0.7023  0.5123
+ 
+              Baa    -0.2892  -154.318   -55.064   -51.475  0.8447  0.5352  0.0000
+    11 H(1)   Bbb     0.1375    73.349    26.173    24.467 -0.5352  0.8447  0.0000
+              Bcc     0.1518    80.969    28.892    27.008  0.0000  0.0000  1.0000
+ 
+              Baa    -0.2871  -153.164   -54.653   -51.090  0.0013  0.5887  0.8083
+    12 H(1)   Bbb     0.1329    70.929    25.309    23.659  0.8693 -0.4002  0.2900
+              Bcc     0.1541    82.235    29.343    27.431  0.4943  0.7023 -0.5123
+ 
+              Baa    -0.2835  -151.274   -53.978   -50.460  0.0955  0.5837  0.8063
+    13 H(1)   Bbb     0.1324    70.630    25.202    23.560  0.9472  0.1957 -0.2538
+              Bcc     0.1511    80.644    28.776    26.900 -0.3060  0.7880 -0.5342
+ 
+              Baa    -0.2981  -159.026   -56.744   -53.045  0.7541 -0.6568  0.0000
+    14 H(1)   Bbb     0.1360    72.538    25.883    24.196  0.6568  0.7541  0.0000
+              Bcc     0.1621    86.488    30.861    28.849  0.0000  0.0000  1.0000
+ 
+              Baa    -0.2835  -151.274   -53.978   -50.460 -0.0955 -0.5837  0.8063
+    15 H(1)   Bbb     0.1324    70.630    25.202    23.560  0.9472  0.1957  0.2538
+              Bcc     0.1511    80.644    28.776    26.900 -0.3060  0.7880  0.5342
+ 
+
+ ---------------------------------------------------------------------------------
+
+ No NMR shielding tensors so no spin-rotation constants.
+ Leave Link  601 at Sat Feb 17 21:03:36 2018, MaxMem=   33554432 cpu:       0.4
+ Merz-Kollman atomic radii used.
+ Read replacement radii for each type of atom:
+ Atom Element Radius
+    1     6    1.50
+    2     6    1.50
+    3     6    1.50
+    4     6    1.50
+    5     7    1.50
+    6     8    1.40
+    7     1    1.20
+    8     1    1.20
+    9     1    1.20
+   10     1    1.20
+   11     1    1.20
+   12     1    1.20
+   13     1    1.20
+   14     1    1.20
+   15     1    1.20
+ Generate VDW surfaces: Layer= 4 Dens= 1 Start= 1.400 Inc= 0.200
+
+ **********************************************************************
+
+            Electrostatic Properties Using The SCF Density
+
+ **********************************************************************
+
+       Atomic Center    1 is at   0.189668  0.762503  0.000000
+       Atomic Center    2 is at  -1.051918  1.648873  0.000000
+       Atomic Center    3 is at   1.161915 -1.477427  0.000000
+       Atomic Center    4 is at  -1.286087 -1.273911  0.000000
+       Atomic Center    5 is at   0.000000 -0.602013  0.000000
+       Atomic Center    6 is at   1.310524  1.261219  0.000000
+       Atomic Center    7 is at  -1.675889  1.484615  0.885906
+       Atomic Center    8 is at  -0.706188  2.682947  0.000000
+       Atomic Center    9 is at  -1.675889  1.484615 -0.885906
+       Atomic Center   10 is at   1.159857 -2.121598  0.889827
+       Atomic Center   11 is at   2.057444 -0.857768  0.000000
+       Atomic Center   12 is at   1.159857 -2.121598 -0.889827
+       Atomic Center   13 is at  -1.388934 -1.914276 -0.887631
+       Atomic Center   14 is at  -2.106987 -0.558555  0.000000
+       Atomic Center   15 is at  -1.388934 -1.914276  0.887631
+      ESP Fit Center   16 is at   0.189668  0.762503  2.100000
+      ESP Fit Center   17 is at   0.189668  0.762503 -2.100000
+      ESP Fit Center   18 is at  -0.526918  2.558200  1.818653
+      ESP Fit Center   19 is at  -2.623791  3.041431  0.000000
+      ESP Fit Center   20 is at  -3.090896  2.151436  0.000000
+      ESP Fit Center   21 is at  -3.090896  1.146311  0.000000
+      ESP Fit Center   22 is at  -0.526918  2.558200 -1.818653
+      ESP Fit Center   23 is at   1.686915 -0.568100  1.818653
+      ESP Fit Center   24 is at   0.417245 -3.440961  0.000000
+      ESP Fit Center   25 is at   1.415042 -3.562116  0.000000
+      ESP Fit Center   26 is at   2.354851 -3.205693  0.000000
+      ESP Fit Center   27 is at   3.021373 -2.453346  0.000000
+      ESP Fit Center   28 is at   1.686915 -0.568100 -1.818653
+      ESP Fit Center   29 is at  -1.811087 -0.364584  1.818653
+      ESP Fit Center   30 is at  -3.325064 -1.776474  0.000000
+      ESP Fit Center   31 is at  -2.857959 -2.666468  0.000000
+      ESP Fit Center   32 is at  -2.030757 -3.237445  0.000000
+      ESP Fit Center   33 is at  -1.032960 -3.358599  0.000000
+      ESP Fit Center   34 is at  -1.811087 -0.364584 -1.818653
+      ESP Fit Center   35 is at   0.000000 -0.602013  2.100000
+      ESP Fit Center   36 is at   0.000000 -0.602013 -2.100000
+      ESP Fit Center   37 is at   1.310524  1.261219  1.960000
+      ESP Fit Center   38 is at   2.290524  1.261219  1.697410
+      ESP Fit Center   39 is at   1.800524  2.109924  1.697410
+      ESP Fit Center   40 is at   0.820524  2.109924  1.697410
+      ESP Fit Center   41 is at   1.800524  0.412515  1.697410
+      ESP Fit Center   42 is at   3.007934  1.261219  0.980000
+      ESP Fit Center   43 is at   2.683757  2.258932  0.980000
+      ESP Fit Center   44 is at   1.835052  2.875552  0.980000
+      ESP Fit Center   45 is at   0.785995  2.875552  0.980000
+      ESP Fit Center   46 is at   3.270524  1.261219  0.000000
+      ESP Fit Center   47 is at   3.007934  2.241219  0.000000
+      ESP Fit Center   48 is at   2.290524  2.958629  0.000000
+      ESP Fit Center   49 is at   1.310524  3.221219  0.000000
+      ESP Fit Center   50 is at   3.007934  1.261219 -0.980000
+      ESP Fit Center   51 is at   2.683757  2.258932 -0.980000
+      ESP Fit Center   52 is at   1.835052  2.875552 -0.980000
+      ESP Fit Center   53 is at   0.785995  2.875552 -0.980000
+      ESP Fit Center   54 is at   2.290524  1.261219 -1.697410
+      ESP Fit Center   55 is at   1.800524  2.109924 -1.697410
+      ESP Fit Center   56 is at   0.820524  2.109924 -1.697410
+      ESP Fit Center   57 is at   1.800524  0.412515 -1.697410
+      ESP Fit Center   58 is at   1.310524  1.261219 -1.960000
+      ESP Fit Center   59 is at  -1.675889  1.484615  2.565906
+      ESP Fit Center   60 is at  -0.688410  1.484615  2.245055
+      ESP Fit Center   61 is at  -1.370741  2.423764  2.245055
+      ESP Fit Center   62 is at  -2.474776  2.065041  2.245055
+      ESP Fit Center   63 is at  -2.474776  0.904189  2.245055
+      ESP Fit Center   64 is at  -1.370741  0.545467  2.245055
+      ESP Fit Center   65 is at  -2.474776  2.868329  1.405055
+      ESP Fit Center   66 is at  -3.177306  2.031086  1.405055
+      ESP Fit Center   67 is at  -3.177306  0.938144  1.405055
+      ESP Fit Center   68 is at  -3.177306  2.031086  0.366758
+      ESP Fit Center   69 is at  -3.177306  0.938144  0.366758
+      ESP Fit Center   70 is at   0.281291  2.682947  1.359149
+      ESP Fit Center   71 is at  -0.401041  3.622095  1.359149
+      ESP Fit Center   72 is at  -1.505076  3.263372  1.359149
+      ESP Fit Center   73 is at   0.517778  3.709976  0.519149
+      ESP Fit Center   74 is at  -0.428738  4.256448  0.519149
+      ESP Fit Center   75 is at  -1.505076  4.066660  0.519149
+      ESP Fit Center   76 is at   0.517778  3.709976 -0.519149
+      ESP Fit Center   77 is at  -0.428738  4.256448 -0.519149
+      ESP Fit Center   78 is at  -1.505076  4.066660 -0.519149
+      ESP Fit Center   79 is at   0.281291  2.682947 -1.359149
+      ESP Fit Center   80 is at  -0.401041  3.622095 -1.359149
+      ESP Fit Center   81 is at  -1.505076  3.263372 -1.359149
+      ESP Fit Center   82 is at  -3.177306  2.031086 -0.366758
+      ESP Fit Center   83 is at  -3.177306  0.938144 -0.366758
+      ESP Fit Center   84 is at  -2.474776  2.868329 -1.405055
+      ESP Fit Center   85 is at  -3.177306  2.031086 -1.405055
+      ESP Fit Center   86 is at  -3.177306  0.938144 -1.405055
+      ESP Fit Center   87 is at  -0.688410  1.484615 -2.245055
+      ESP Fit Center   88 is at  -1.370741  2.423764 -2.245055
+      ESP Fit Center   89 is at  -2.474776  2.065041 -2.245055
+      ESP Fit Center   90 is at  -2.474776  0.904189 -2.245055
+      ESP Fit Center   91 is at  -1.370741  0.545467 -2.245055
+      ESP Fit Center   92 is at  -1.675889  1.484615 -2.565906
+      ESP Fit Center   93 is at   1.159857 -2.121598  2.569827
+      ESP Fit Center   94 is at   2.147336 -2.121598  2.248976
+      ESP Fit Center   95 is at   1.465005 -1.182449  2.248976
+      ESP Fit Center   96 is at   0.360969 -1.541172  2.248976
+      ESP Fit Center   97 is at   0.360969 -2.702024  2.248976
+      ESP Fit Center   98 is at   1.465005 -3.060746  2.248976
+      ESP Fit Center   99 is at   2.757632 -2.121598  1.408976
+      ESP Fit Center  100 is at   0.360969 -3.505312  1.408976
+      ESP Fit Center  101 is at   1.437308 -3.695099  1.408976
+      ESP Fit Center  102 is at   2.383824 -3.148628  1.408976
+      ESP Fit Center  103 is at   0.360969 -3.505312  0.370679
+      ESP Fit Center  104 is at   1.437308 -3.695099  0.370679
+      ESP Fit Center  105 is at   2.383824 -3.148628  0.370679
+      ESP Fit Center  106 is at   3.044924 -0.857768  1.359149
+      ESP Fit Center  107 is at   2.362592  0.081381  1.359149
+      ESP Fit Center  108 is at   3.655219 -0.857768  0.519149
+      ESP Fit Center  109 is at   3.281411  0.169262  0.519149
+      ESP Fit Center  110 is at   3.281411 -1.884798  0.519149
+      ESP Fit Center  111 is at   3.655219 -0.857768 -0.519149
+      ESP Fit Center  112 is at   3.281411  0.169262 -0.519149
+      ESP Fit Center  113 is at   3.281411 -1.884798 -0.519149
+      ESP Fit Center  114 is at   3.044924 -0.857768 -1.359149
+      ESP Fit Center  115 is at   2.362592  0.081381 -1.359149
+      ESP Fit Center  116 is at   0.360969 -3.505312 -0.370679
+      ESP Fit Center  117 is at   1.437308 -3.695099 -0.370679
+      ESP Fit Center  118 is at   2.383824 -3.148628 -0.370679
+      ESP Fit Center  119 is at   2.757632 -2.121598 -1.408976
+      ESP Fit Center  120 is at   0.360969 -3.505312 -1.408976
+      ESP Fit Center  121 is at   1.437308 -3.695099 -1.408976
+      ESP Fit Center  122 is at   2.383824 -3.148628 -1.408976
+      ESP Fit Center  123 is at   2.147336 -2.121598 -2.248976
+      ESP Fit Center  124 is at   1.465005 -1.182449 -2.248976
+      ESP Fit Center  125 is at   0.360969 -1.541172 -2.248976
+      ESP Fit Center  126 is at   0.360969 -2.702024 -2.248976
+      ESP Fit Center  127 is at   1.465005 -3.060746 -2.248976
+      ESP Fit Center  128 is at   1.159857 -2.121598 -2.569827
+      ESP Fit Center  129 is at  -2.187821 -3.297990 -0.368482
+      ESP Fit Center  130 is at  -1.111483 -3.487777 -0.368482
+      ESP Fit Center  131 is at  -2.890351 -1.367805 -1.406779
+      ESP Fit Center  132 is at  -2.890351 -2.460747 -1.406779
+      ESP Fit Center  133 is at  -2.187821 -3.297990 -1.406779
+      ESP Fit Center  134 is at  -1.111483 -3.487777 -1.406779
+      ESP Fit Center  135 is at  -0.401455 -1.914276 -2.246779
+      ESP Fit Center  136 is at  -1.083786 -0.975128 -2.246779
+      ESP Fit Center  137 is at  -2.187821 -1.333850 -2.246779
+      ESP Fit Center  138 is at  -2.187821 -2.494702 -2.246779
+      ESP Fit Center  139 is at  -1.083786 -2.853425 -2.246779
+      ESP Fit Center  140 is at  -1.388934 -1.914276 -2.567631
+      ESP Fit Center  141 is at  -2.905874  0.021870  1.359149
+      ESP Fit Center  142 is at  -2.905874 -1.138981  1.359149
+      ESP Fit Center  143 is at  -3.608404 -0.012084  0.519149
+      ESP Fit Center  144 is at  -3.608404 -1.105026  0.519149
+      ESP Fit Center  145 is at  -3.608404 -0.012084 -0.519149
+      ESP Fit Center  146 is at  -3.608404 -1.105026 -0.519149
+      ESP Fit Center  147 is at  -2.905874  0.021870 -1.359149
+      ESP Fit Center  148 is at  -2.905874 -1.138981 -1.359149
+      ESP Fit Center  149 is at  -1.388934 -1.914276  2.567631
+      ESP Fit Center  150 is at  -0.401455 -1.914276  2.246779
+      ESP Fit Center  151 is at  -1.083786 -0.975128  2.246779
+      ESP Fit Center  152 is at  -2.187821 -1.333850  2.246779
+      ESP Fit Center  153 is at  -2.187821 -2.494702  2.246779
+      ESP Fit Center  154 is at  -1.083786 -2.853425  2.246779
+      ESP Fit Center  155 is at  -2.890351 -1.367805  1.406779
+      ESP Fit Center  156 is at  -2.890351 -2.460747  1.406779
+      ESP Fit Center  157 is at  -2.187821 -3.297990  1.406779
+      ESP Fit Center  158 is at  -1.111483 -3.487777  1.406779
+      ESP Fit Center  159 is at  -2.187821 -3.297990  0.368482
+      ESP Fit Center  160 is at  -1.111483 -3.487777  0.368482
+      ESP Fit Center  161 is at   0.189668  0.762503  2.400000
+      ESP Fit Center  162 is at   0.710329  1.664313  2.162325
+      ESP Fit Center  163 is at   0.710329  1.664313 -2.162325
+      ESP Fit Center  164 is at   0.189668  0.762503 -2.400000
+      ESP Fit Center  165 is at  -0.531258  2.550684  2.162325
+      ESP Fit Center  166 is at  -2.510777  3.478224  0.534050
+      ESP Fit Center  167 is at  -3.160030  2.664086  0.534050
+      ESP Fit Center  168 is at  -2.510777  3.478224 -0.534050
+      ESP Fit Center  169 is at  -3.160030  2.664086 -0.534050
+      ESP Fit Center  170 is at  -0.531258  2.550684 -2.162325
+      ESP Fit Center  171 is at   1.682576 -0.575617  2.162325
+      ESP Fit Center  172 is at   3.270027 -2.492640  0.534050
+      ESP Fit Center  173 is at   3.270027 -2.492640 -0.534050
+      ESP Fit Center  174 is at   1.682576 -0.575617 -2.162325
+      ESP Fit Center  175 is at  -1.806747 -0.372100  2.162325
+      ESP Fit Center  176 is at  -3.394198 -2.289124  0.534050
+      ESP Fit Center  177 is at  -3.394198 -2.289124 -0.534050
+      ESP Fit Center  178 is at  -1.806747 -0.372100 -2.162325
+      ESP Fit Center  179 is at   0.000000 -0.602013  2.400000
+      ESP Fit Center  180 is at   0.000000 -0.602013 -2.400000
+      ESP Fit Center  181 is at   1.310524  1.261219  2.240000
+      ESP Fit Center  182 is at   2.282423  1.261219  2.018170
+      ESP Fit Center  183 is at   1.796474  2.102909  2.018170
+      ESP Fit Center  184 is at   0.824574  2.102909  2.018170
+      ESP Fit Center  185 is at   1.796474  0.419530  2.018170
+      ESP Fit Center  186 is at   3.061826  1.261219  1.396617
+      ESP Fit Center  187 is at   2.727357  2.290609  1.396617
+      ESP Fit Center  188 is at   1.851706  2.926807  1.396617
+      ESP Fit Center  189 is at   0.769341  2.926807  1.396617
+      ESP Fit Center  190 is at   3.494362  1.261219  0.498447
+      ESP Fit Center  191 is at   3.244217  2.276100  0.498447
+      ESP Fit Center  192 is at   2.551085  3.058483  0.498447
+      ESP Fit Center  193 is at   1.573756  3.429135  0.498447
+      ESP Fit Center  194 is at   3.494362  1.261219 -0.498447
+      ESP Fit Center  195 is at   3.244217  2.276100 -0.498447
+      ESP Fit Center  196 is at   2.551085  3.058483 -0.498447
+      ESP Fit Center  197 is at   1.573756  3.429135 -0.498447
+      ESP Fit Center  198 is at   3.061826  1.261219 -1.396617
+      ESP Fit Center  199 is at   2.727357  2.290609 -1.396617
+      ESP Fit Center  200 is at   1.851706  2.926807 -1.396617
+      ESP Fit Center  201 is at   0.769341  2.926807 -1.396617
+      ESP Fit Center  202 is at   2.282423  1.261219 -2.018170
+      ESP Fit Center  203 is at   1.796474  2.102909 -2.018170
+      ESP Fit Center  204 is at   0.824574  2.102909 -2.018170
+      ESP Fit Center  205 is at   1.796474  0.419530 -2.018170
+      ESP Fit Center  206 is at   1.310524  1.261219 -2.240000
+      ESP Fit Center  207 is at  -1.675889  1.484615  2.805906
+      ESP Fit Center  208 is at  -0.715889  1.484615  2.548675
+      ESP Fit Center  209 is at  -1.195889  2.315999  2.548675
+      ESP Fit Center  210 is at  -2.155889  2.315999  2.548675
+      ESP Fit Center  211 is at  -2.635889  1.484615  2.548675
+      ESP Fit Center  212 is at  -2.155889  0.653231  2.548675
+      ESP Fit Center  213 is at  -1.195889  0.653231  2.548675
+      ESP Fit Center  214 is at  -2.189713  3.066002  1.845906
+      ESP Fit Center  215 is at  -3.021097  2.461966  1.845906
+      ESP Fit Center  216 is at  -3.338658  1.484615  1.845906
+      ESP Fit Center  217 is at  -3.021097  0.507264  1.845906
+      ESP Fit Center  218 is at  -3.338658  2.444615  0.885906
+      ESP Fit Center  219 is at  -3.595889  1.484615  0.885906
+      ESP Fit Center  220 is at  -0.226188  3.514331  1.662769
+      ESP Fit Center  221 is at  -1.186188  3.514331  1.662769
+      ESP Fit Center  222 is at   0.639020  3.660298  0.960000
+      ESP Fit Center  223 is at  -0.192365  4.264334  0.960000
+      ESP Fit Center  224 is at  -1.220012  4.264334  0.960000
+      ESP Fit Center  225 is at  -2.051397  3.660298  0.960000
+      ESP Fit Center  226 is at   0.956580  3.642947  0.000000
+      ESP Fit Center  227 is at   0.253812  4.345715  0.000000
+      ESP Fit Center  228 is at  -0.706188  4.602947  0.000000
+      ESP Fit Center  229 is at  -1.666188  4.345715  0.000000
+      ESP Fit Center  230 is at   0.639020  3.660298 -0.960000
+      ESP Fit Center  231 is at  -0.192365  4.264334 -0.960000
+      ESP Fit Center  232 is at  -1.220012  4.264334 -0.960000
+      ESP Fit Center  233 is at  -2.051397  3.660298 -0.960000
+      ESP Fit Center  234 is at  -0.226188  3.514331 -1.662769
+      ESP Fit Center  235 is at  -1.186188  3.514331 -1.662769
+      ESP Fit Center  236 is at  -3.338658  2.444615 -0.885906
+      ESP Fit Center  237 is at  -3.595889  1.484615 -0.885906
+      ESP Fit Center  238 is at  -2.189713  3.066002 -1.845906
+      ESP Fit Center  239 is at  -3.021097  2.461966 -1.845906
+      ESP Fit Center  240 is at  -3.338658  1.484615 -1.845906
+      ESP Fit Center  241 is at  -3.021097  0.507264 -1.845906
+      ESP Fit Center  242 is at  -0.715889  1.484615 -2.548675
+      ESP Fit Center  243 is at  -1.195889  2.315999 -2.548675
+      ESP Fit Center  244 is at  -2.155889  2.315999 -2.548675
+      ESP Fit Center  245 is at  -2.635889  1.484615 -2.548675
+      ESP Fit Center  246 is at  -2.155889  0.653231 -2.548675
+      ESP Fit Center  247 is at  -1.195889  0.653231 -2.548675
+      ESP Fit Center  248 is at  -1.675889  1.484615 -2.805906
+      ESP Fit Center  249 is at   1.159857 -2.121598  2.809827
+      ESP Fit Center  250 is at   2.119857 -2.121598  2.552596
+      ESP Fit Center  251 is at   1.639857 -1.290213  2.552596
+      ESP Fit Center  252 is at   0.679857 -1.290213  2.552596
+      ESP Fit Center  253 is at   0.199857 -2.121598  2.552596
+      ESP Fit Center  254 is at   0.679857 -2.952982  2.552596
+      ESP Fit Center  255 is at   1.639857 -2.952982  2.552596
+      ESP Fit Center  256 is at   2.822626 -2.121598  1.849827
+      ESP Fit Center  257 is at  -0.185351 -3.098949  1.849827
+      ESP Fit Center  258 is at   0.646033 -3.702985  1.849827
+      ESP Fit Center  259 is at   1.673681 -3.702985  1.849827
+      ESP Fit Center  260 is at   2.505065 -3.098949  1.849827
+      ESP Fit Center  261 is at   0.199857 -3.784367  0.889827
+      ESP Fit Center  262 is at   1.159857 -4.041598  0.889827
+      ESP Fit Center  263 is at   2.119857 -3.784367  0.889827
+      ESP Fit Center  264 is at   2.822626 -3.081598  0.889827
+      ESP Fit Center  265 is at   3.017444 -0.857768  1.662769
+      ESP Fit Center  266 is at   2.537444 -0.026383  1.662769
+      ESP Fit Center  267 is at   3.720213 -0.857768  0.960000
+      ESP Fit Center  268 is at   3.402652  0.119583  0.960000
+      ESP Fit Center  269 is at   3.402652 -1.835119  0.960000
+      ESP Fit Center  270 is at   3.977444 -0.857768  0.000000
+      ESP Fit Center  271 is at   3.720213  0.102232  0.000000
+      ESP Fit Center  272 is at   3.720213 -1.817768  0.000000
+      ESP Fit Center  273 is at   3.720213 -0.857768 -0.960000
+      ESP Fit Center  274 is at   3.402652  0.119583 -0.960000
+      ESP Fit Center  275 is at   3.402652 -1.835119 -0.960000
+      ESP Fit Center  276 is at   3.017444 -0.857768 -1.662769
+      ESP Fit Center  277 is at   2.537444 -0.026383 -1.662769
+      ESP Fit Center  278 is at   0.199857 -3.784367 -0.889827
+      ESP Fit Center  279 is at   1.159857 -4.041598 -0.889827
+      ESP Fit Center  280 is at   2.119857 -3.784367 -0.889827
+      ESP Fit Center  281 is at   2.822626 -3.081598 -0.889827
+      ESP Fit Center  282 is at   2.822626 -2.121598 -1.849827
+      ESP Fit Center  283 is at  -0.185351 -3.098949 -1.849827
+      ESP Fit Center  284 is at   0.646033 -3.702985 -1.849827
+      ESP Fit Center  285 is at   1.673681 -3.702985 -1.849827
+      ESP Fit Center  286 is at   2.505065 -3.098949 -1.849827
+      ESP Fit Center  287 is at   2.119857 -2.121598 -2.552596
+      ESP Fit Center  288 is at   1.639857 -1.290213 -2.552596
+      ESP Fit Center  289 is at   0.679857 -1.290213 -2.552596
+      ESP Fit Center  290 is at   0.199857 -2.121598 -2.552596
+      ESP Fit Center  291 is at   0.679857 -2.952982 -2.552596
+      ESP Fit Center  292 is at   1.639857 -2.952982 -2.552596
+      ESP Fit Center  293 is at   1.159857 -2.121598 -2.809827
+      ESP Fit Center  294 is at  -3.051703 -2.874276 -0.887631
+      ESP Fit Center  295 is at  -2.348934 -3.577045 -0.887631
+      ESP Fit Center  296 is at  -1.388934 -3.834276 -0.887631
+      ESP Fit Center  297 is at  -0.428934 -3.577045 -0.887631
+      ESP Fit Center  298 is at  -3.051703 -1.914276 -1.847631
+      ESP Fit Center  299 is at  -2.734142 -2.891627 -1.847631
+      ESP Fit Center  300 is at  -1.902758 -3.495663 -1.847631
+      ESP Fit Center  301 is at  -0.875110 -3.495663 -1.847631
+      ESP Fit Center  302 is at  -0.428934 -1.914276 -2.550399
+      ESP Fit Center  303 is at  -0.908934 -1.082892 -2.550399
+      ESP Fit Center  304 is at  -1.868934 -1.082892 -2.550399
+      ESP Fit Center  305 is at  -2.348934 -1.914276 -2.550399
+      ESP Fit Center  306 is at  -1.868934 -2.745661 -2.550399
+      ESP Fit Center  307 is at  -0.908934 -2.745661 -2.550399
+      ESP Fit Center  308 is at  -1.388934 -1.914276 -2.807631
+      ESP Fit Center  309 is at  -3.066987 -0.558555  1.662769
+      ESP Fit Center  310 is at  -3.452195  0.418796  0.960000
+      ESP Fit Center  311 is at  -3.769755 -0.558555  0.960000
+      ESP Fit Center  312 is at  -3.769755  0.401445  0.000000
+      ESP Fit Center  313 is at  -4.026987 -0.558555  0.000000
+      ESP Fit Center  314 is at  -3.769755 -1.518555  0.000000
+      ESP Fit Center  315 is at  -3.452195  0.418796 -0.960000
+      ESP Fit Center  316 is at  -3.769755 -0.558555 -0.960000
+      ESP Fit Center  317 is at  -3.066987 -0.558555 -1.662769
+      ESP Fit Center  318 is at  -1.388934 -1.914276  2.807631
+      ESP Fit Center  319 is at  -0.428934 -1.914276  2.550399
+      ESP Fit Center  320 is at  -0.908934 -1.082892  2.550399
+      ESP Fit Center  321 is at  -1.868934 -1.082892  2.550399
+      ESP Fit Center  322 is at  -2.348934 -1.914276  2.550399
+      ESP Fit Center  323 is at  -1.868934 -2.745661  2.550399
+      ESP Fit Center  324 is at  -0.908934 -2.745661  2.550399
+      ESP Fit Center  325 is at  -3.051703 -1.914276  1.847631
+      ESP Fit Center  326 is at  -2.734142 -2.891627  1.847631
+      ESP Fit Center  327 is at  -1.902758 -3.495663  1.847631
+      ESP Fit Center  328 is at  -0.875110 -3.495663  1.847631
+      ESP Fit Center  329 is at  -3.051703 -2.874276  0.887631
+      ESP Fit Center  330 is at  -2.348934 -3.577045  0.887631
+      ESP Fit Center  331 is at  -1.388934 -3.834276  0.887631
+      ESP Fit Center  332 is at  -0.428934 -3.577045  0.887631
+      ESP Fit Center  333 is at   0.189668  0.762503  2.700000
+      ESP Fit Center  334 is at   1.222914  0.762503  2.494475
+      ESP Fit Center  335 is at   0.706291  1.657319  2.494475
+      ESP Fit Center  336 is at   1.222914  0.762503 -2.494475
+      ESP Fit Center  337 is at   0.706291  1.657319 -2.494475
+      ESP Fit Center  338 is at   0.189668  0.762503 -2.700000
+      ESP Fit Center  339 is at  -0.535296  2.543690  2.494475
+      ESP Fit Center  340 is at  -1.323624  3.538629  1.909188
+      ESP Fit Center  341 is at  -2.607198  3.599132  1.033245
+      ESP Fit Center  342 is at  -2.961107  3.558062  0.000000
+      ESP Fit Center  343 is at  -3.546393  2.682119  0.000000
+      ESP Fit Center  344 is at  -3.751918  1.648873  0.000000
+      ESP Fit Center  345 is at  -2.607198  3.599132 -1.033245
+      ESP Fit Center  346 is at  -1.323624  3.538629 -1.909188
+      ESP Fit Center  347 is at  -0.535296  2.543690 -2.494475
+      ESP Fit Center  348 is at   1.678538 -0.582610  2.494475
+      ESP Fit Center  349 is at   3.071104 -1.477427  1.909188
+      ESP Fit Center  350 is at   3.409360 -2.559739  1.033245
+      ESP Fit Center  351 is at   0.128670 -3.971902  0.000000
+      ESP Fit Center  352 is at   1.161915 -4.177427  0.000000
+      ESP Fit Center  353 is at   2.195161 -3.971902  0.000000
+      ESP Fit Center  354 is at   3.071104 -3.386615  0.000000
+      ESP Fit Center  355 is at   3.656390 -2.510672  0.000000
+      ESP Fit Center  356 is at   3.409360 -2.559739 -1.033245
+      ESP Fit Center  357 is at   3.071104 -1.477427 -1.909188
+      ESP Fit Center  358 is at   1.678538 -0.582610 -2.494475
+      ESP Fit Center  359 is at  -1.802709 -0.379094  2.494475
+      ESP Fit Center  360 is at  -3.117939 -0.736030  1.909188
+      ESP Fit Center  361 is at  -3.533531 -2.356223  1.033245
+      ESP Fit Center  362 is at  -3.780561 -2.307156  0.000000
+      ESP Fit Center  363 is at  -3.195275 -3.183099  0.000000
+      ESP Fit Center  364 is at  -2.319332 -3.768385  0.000000
+      ESP Fit Center  365 is at  -1.286087 -3.973911  0.000000
+      ESP Fit Center  366 is at  -3.533531 -2.356223 -1.033245
+      ESP Fit Center  367 is at  -3.117939 -0.736030 -1.909188
+      ESP Fit Center  368 is at  -1.802709 -0.379094 -2.494475
+      ESP Fit Center  369 is at   0.000000 -0.602013  2.700000
+      ESP Fit Center  370 is at   0.000000 -0.602013 -2.700000
+      ESP Fit Center  371 is at   1.310524  1.261219  2.520000
+      ESP Fit Center  372 is at   2.403911  1.261219  2.270442
+      ESP Fit Center  373 is at   1.857217  2.208120  2.270442
+      ESP Fit Center  374 is at   0.763830  2.208120  2.270442
+      ESP Fit Center  375 is at   1.857217  0.314319  2.270442
+      ESP Fit Center  376 is at   3.280739  1.261219  1.571194
+      ESP Fit Center  377 is at   2.967974  2.326398  1.571194
+      ESP Fit Center  378 is at   2.128981  3.053390  1.571194
+      ESP Fit Center  379 is at   1.030133  3.211381  1.571194
+      ESP Fit Center  380 is at   3.767342  1.261219  0.560753
+      ESP Fit Center  381 is at   3.524041  2.327193  0.560753
+      ESP Fit Center  382 is at   2.842325  3.182037  0.560753
+      ESP Fit Center  383 is at   1.857217  3.656440  0.560753
+      ESP Fit Center  384 is at   3.767342  1.261219 -0.560753
+      ESP Fit Center  385 is at   3.524041  2.327193 -0.560753
+      ESP Fit Center  386 is at   2.842325  3.182037 -0.560753
+      ESP Fit Center  387 is at   1.857217  3.656440 -0.560753
+      ESP Fit Center  388 is at   3.280739  1.261219 -1.571194
+      ESP Fit Center  389 is at   2.967974  2.326398 -1.571194
+      ESP Fit Center  390 is at   2.128981  3.053390 -1.571194
+      ESP Fit Center  391 is at   1.030133  3.211381 -1.571194
+      ESP Fit Center  392 is at   2.403911  1.261219 -2.270442
+      ESP Fit Center  393 is at   1.857217  2.208120 -2.270442
+      ESP Fit Center  394 is at   0.763830  2.208120 -2.270442
+      ESP Fit Center  395 is at   1.857217  0.314319 -2.270442
+      ESP Fit Center  396 is at   1.310524  1.261219 -2.520000
+      ESP Fit Center  397 is at  -1.675889  1.484615  3.045906
+      ESP Fit Center  398 is at  -0.595889  1.484615  2.756521
+      ESP Fit Center  399 is at  -1.135889  2.419923  2.756521
+      ESP Fit Center  400 is at  -2.215889  2.419923  2.756521
+      ESP Fit Center  401 is at  -2.755889  1.484615  2.756521
+      ESP Fit Center  402 is at  -2.215889  0.549308  2.756521
+      ESP Fit Center  403 is at  -1.135889  0.549308  2.756521
+      ESP Fit Center  404 is at  -1.942105  3.336190  1.965906
+      ESP Fit Center  405 is at  -2.900881  2.898331  1.965906
+      ESP Fit Center  406 is at  -3.470731  2.011628  1.965906
+      ESP Fit Center  407 is at  -3.470731  0.957602  1.965906
+      ESP Fit Center  408 is at  -2.900881  0.070899  1.965906
+      ESP Fit Center  409 is at  -3.292672  2.916960  0.885906
+      ESP Fit Center  410 is at  -3.773123  2.001537  0.885906
+      ESP Fit Center  411 is at  -3.773123  0.967693  0.885906
+      ESP Fit Center  412 is at  -0.166188  3.618254  1.870615
+      ESP Fit Center  413 is at  -1.246188  3.618254  1.870615
+      ESP Fit Center  414 is at   0.867473  3.694277  1.080000
+      ESP Fit Center  415 is at   0.070893  4.384518  1.080000
+      ESP Fit Center  416 is at  -0.972405  4.534521  1.080000
+      ESP Fit Center  417 is at  -1.931181  4.096663  1.080000
+      ESP Fit Center  418 is at   0.520831  4.460592  0.000000
+      ESP Fit Center  419 is at  -0.445829  4.827198  0.000000
+      ESP Fit Center  420 is at  -1.472135  4.702582  0.000000
+      ESP Fit Center  421 is at  -2.322972  4.115291  0.000000
+      ESP Fit Center  422 is at   0.867473  3.694277 -1.080000
+      ESP Fit Center  423 is at   0.070893  4.384518 -1.080000
+      ESP Fit Center  424 is at  -0.972405  4.534521 -1.080000
+      ESP Fit Center  425 is at  -1.931181  4.096663 -1.080000
+      ESP Fit Center  426 is at  -0.166188  3.618254 -1.870615
+      ESP Fit Center  427 is at  -1.246188  3.618254 -1.870615
+      ESP Fit Center  428 is at  -3.292672  2.916960 -0.885906
+      ESP Fit Center  429 is at  -3.773123  2.001537 -0.885906
+      ESP Fit Center  430 is at  -3.773123  0.967693 -0.885906
+      ESP Fit Center  431 is at  -1.942105  3.336190 -1.965906
+      ESP Fit Center  432 is at  -2.900881  2.898331 -1.965906
+      ESP Fit Center  433 is at  -3.470731  2.011628 -1.965906
+      ESP Fit Center  434 is at  -3.470731  0.957602 -1.965906
+      ESP Fit Center  435 is at  -2.900881  0.070899 -1.965906
+      ESP Fit Center  436 is at  -0.595889  1.484615 -2.756521
+      ESP Fit Center  437 is at  -1.135889  2.419923 -2.756521
+      ESP Fit Center  438 is at  -2.215889  2.419923 -2.756521
+      ESP Fit Center  439 is at  -2.755889  1.484615 -2.756521
+      ESP Fit Center  440 is at  -2.215889  0.549308 -2.756521
+      ESP Fit Center  441 is at  -1.135889  0.549308 -2.756521
+      ESP Fit Center  442 is at  -1.675889  1.484615 -3.045906
+      ESP Fit Center  443 is at   1.159857 -2.121598  3.049827
+      ESP Fit Center  444 is at   2.239857 -2.121598  2.760442
+      ESP Fit Center  445 is at   1.699857 -1.186290  2.760442
+      ESP Fit Center  446 is at   0.619857 -1.186290  2.760442
+      ESP Fit Center  447 is at   0.079857 -2.121598  2.760442
+      ESP Fit Center  448 is at   0.619857 -3.056905  2.760442
+      ESP Fit Center  449 is at   1.699857 -3.056905  2.760442
+      ESP Fit Center  450 is at   3.030472 -2.121598  1.969827
+      ESP Fit Center  451 is at  -0.065135 -3.535314  1.969827
+      ESP Fit Center  452 is at   0.893641 -3.973173  1.969827
+      ESP Fit Center  453 is at   1.936938 -3.823169  1.969827
+      ESP Fit Center  454 is at   2.733518 -3.132929  1.969827
+      ESP Fit Center  455 is at   0.393910 -4.141233  0.889827
+      ESP Fit Center  456 is at   1.420216 -4.265849  0.889827
+      ESP Fit Center  457 is at   2.386877 -3.899243  0.889827
+      ESP Fit Center  458 is at   3.137444 -0.857768  1.870615
+      ESP Fit Center  459 is at   2.597444  0.077540  1.870615
+      ESP Fit Center  460 is at   3.928059 -0.857768  1.080000
+      ESP Fit Center  461 is at   3.631106  0.153563  1.080000
+      ESP Fit Center  462 is at   3.631106 -1.869098  1.080000
+      ESP Fit Center  463 is at   4.217444 -0.857768  0.000000
+      ESP Fit Center  464 is at   3.970029  0.146034  0.000000
+      ESP Fit Center  465 is at   3.970029 -1.861570  0.000000
+      ESP Fit Center  466 is at   3.928059 -0.857768 -1.080000
+      ESP Fit Center  467 is at   3.631106  0.153563 -1.080000
+      ESP Fit Center  468 is at   3.631106 -1.869098 -1.080000
+      ESP Fit Center  469 is at   3.137444 -0.857768 -1.870615
+      ESP Fit Center  470 is at   2.597444  0.077540 -1.870615
+      ESP Fit Center  471 is at   0.393910 -4.141233 -0.889827
+      ESP Fit Center  472 is at   1.420216 -4.265849 -0.889827
+      ESP Fit Center  473 is at   2.386877 -3.899243 -0.889827
+      ESP Fit Center  474 is at   3.030472 -2.121598 -1.969827
+      ESP Fit Center  475 is at  -0.065135 -3.535314 -1.969827
+      ESP Fit Center  476 is at   0.893641 -3.973173 -1.969827
+      ESP Fit Center  477 is at   1.936938 -3.823169 -1.969827
+      ESP Fit Center  478 is at   2.733518 -3.132929 -1.969827
+      ESP Fit Center  479 is at   2.239857 -2.121598 -2.760442
+      ESP Fit Center  480 is at   1.699857 -1.186290 -2.760442
+      ESP Fit Center  481 is at   0.619857 -1.186290 -2.760442
+      ESP Fit Center  482 is at   0.079857 -2.121598 -2.760442
+      ESP Fit Center  483 is at   0.619857 -3.056905 -2.760442
+      ESP Fit Center  484 is at   1.699857 -3.056905 -2.760442
+      ESP Fit Center  485 is at   1.159857 -2.121598 -3.049827
+      ESP Fit Center  486 is at  -3.005717 -3.346621 -0.887631
+      ESP Fit Center  487 is at  -2.154880 -3.933911 -0.887631
+      ESP Fit Center  488 is at  -1.128575 -4.058527 -0.887631
+      ESP Fit Center  489 is at  -3.183776 -1.387263 -1.967631
+      ESP Fit Center  490 is at  -3.183776 -2.441289 -1.967631
+      ESP Fit Center  491 is at  -2.613926 -3.327993 -1.967631
+      ESP Fit Center  492 is at  -1.655150 -3.765851 -1.967631
+      ESP Fit Center  493 is at  -0.611852 -3.615847 -1.967631
+      ESP Fit Center  494 is at  -0.308934 -1.914276 -2.758245
+      ESP Fit Center  495 is at  -0.848934 -0.978969 -2.758245
+      ESP Fit Center  496 is at  -1.928934 -0.978969 -2.758245
+      ESP Fit Center  497 is at  -2.468934 -1.914276 -2.758245
+      ESP Fit Center  498 is at  -1.928934 -2.849584 -2.758245
+      ESP Fit Center  499 is at  -0.848934 -2.849584 -2.758245
+      ESP Fit Center  500 is at  -1.388934 -1.914276 -3.047631
+      ESP Fit Center  501 is at  -3.186987 -0.558555  1.870615
+      ESP Fit Center  502 is at  -3.901828 -0.031542  1.080000
+      ESP Fit Center  503 is at  -3.901828 -1.085568  1.080000
+      ESP Fit Center  504 is at  -3.723770  0.873790  0.000000
+      ESP Fit Center  505 is at  -4.204221 -0.041633  0.000000
+      ESP Fit Center  506 is at  -4.204221 -1.075477  0.000000
+      ESP Fit Center  507 is at  -3.901828 -0.031542 -1.080000
+      ESP Fit Center  508 is at  -3.901828 -1.085568 -1.080000
+      ESP Fit Center  509 is at  -3.186987 -0.558555 -1.870615
+      ESP Fit Center  510 is at  -1.388934 -1.914276  3.047631
+      ESP Fit Center  511 is at  -0.308934 -1.914276  2.758245
+      ESP Fit Center  512 is at  -0.848934 -0.978969  2.758245
+      ESP Fit Center  513 is at  -1.928934 -0.978969  2.758245
+      ESP Fit Center  514 is at  -2.468934 -1.914276  2.758245
+      ESP Fit Center  515 is at  -1.928934 -2.849584  2.758245
+      ESP Fit Center  516 is at  -0.848934 -2.849584  2.758245
+      ESP Fit Center  517 is at  -3.183776 -1.387263  1.967631
+      ESP Fit Center  518 is at  -3.183776 -2.441289  1.967631
+      ESP Fit Center  519 is at  -2.613926 -3.327993  1.967631
+      ESP Fit Center  520 is at  -1.655150 -3.765851  1.967631
+      ESP Fit Center  521 is at  -0.611852 -3.615847  1.967631
+      ESP Fit Center  522 is at  -3.005717 -3.346621  0.887631
+      ESP Fit Center  523 is at  -2.154880 -3.933911  0.887631
+      ESP Fit Center  524 is at  -1.128575 -4.058527  0.887631
+      ESP Fit Center  525 is at   0.189668  0.762503  3.000000
+      ESP Fit Center  526 is at   1.215729  0.762503  2.819078
+      ESP Fit Center  527 is at   0.702699  1.651097  2.819078
+      ESP Fit Center  528 is at   1.215729  0.762503 -2.819078
+      ESP Fit Center  529 is at   0.702699  1.651097 -2.819078
+      ESP Fit Center  530 is at   0.189668  0.762503 -3.000000
+      ESP Fit Center  531 is at  -0.538888  2.537468  2.819078
+      ESP Fit Center  532 is at   0.570324  2.691425  2.298133
+      ESP Fit Center  533 is at  -0.250848  3.402974  2.298133
+      ESP Fit Center  534 is at  -1.326353  3.557608  2.298133
+      ESP Fit Center  535 is at  -2.350957  3.898873  1.500000
+      ESP Fit Center  536 is at  -2.832356  4.006554  0.520945
+      ESP Fit Center  537 is at  -3.563820  3.204177  0.520945
+      ESP Fit Center  538 is at  -3.956037  2.191747  0.520945
+      ESP Fit Center  539 is at  -2.832356  4.006554 -0.520945
+      ESP Fit Center  540 is at  -3.563820  3.204177 -0.520945
+      ESP Fit Center  541 is at  -3.956037  2.191747 -0.520945
+      ESP Fit Center  542 is at  -2.350957  3.898873 -1.500000
+      ESP Fit Center  543 is at   0.570324  2.691425 -2.298133
+      ESP Fit Center  544 is at  -0.250848  3.402974 -2.298133
+      ESP Fit Center  545 is at  -1.326353  3.557608 -2.298133
+      ESP Fit Center  546 is at  -0.538888  2.537468 -2.819078
+      ESP Fit Center  547 is at   1.674946 -0.588833  2.819078
+      ESP Fit Center  548 is at   3.090278 -1.477427  2.298133
+      ESP Fit Center  549 is at   2.784158 -0.434875  2.298133
+      ESP Fit Center  550 is at   3.535376 -2.534160  1.500000
+      ESP Fit Center  551 is at   2.478815 -4.122118  0.520945
+      ESP Fit Center  552 is at   3.345261 -3.467809  0.520945
+      ESP Fit Center  553 is at   3.916833 -2.544688  0.520945
+      ESP Fit Center  554 is at   2.478815 -4.122118 -0.520945
+      ESP Fit Center  555 is at   3.345261 -3.467809 -0.520945
+      ESP Fit Center  556 is at   3.916833 -2.544688 -0.520945
+      ESP Fit Center  557 is at   3.535376 -2.534160 -1.500000
+      ESP Fit Center  558 is at   3.090278 -1.477427 -2.298133
+      ESP Fit Center  559 is at   2.784158 -0.434875 -2.298133
+      ESP Fit Center  560 is at   1.674946 -0.588833 -2.819078
+      ESP Fit Center  561 is at  -1.799117 -0.385316  2.819078
+      ESP Fit Center  562 is at  -3.136337 -0.730628  2.298133
+      ESP Fit Center  563 is at  -3.827389 -1.814081  1.500000
+      ESP Fit Center  564 is at  -4.190205 -1.816785  0.520945
+      ESP Fit Center  565 is at  -3.797988 -2.829214  0.520945
+      ESP Fit Center  566 is at  -3.066524 -3.631591  0.520945
+      ESP Fit Center  567 is at  -4.190205 -1.816785 -0.520945
+      ESP Fit Center  568 is at  -3.797988 -2.829214 -0.520945
+      ESP Fit Center  569 is at  -3.066524 -3.631591 -0.520945
+      ESP Fit Center  570 is at  -3.827389 -1.814081 -1.500000
+      ESP Fit Center  571 is at  -3.136337 -0.730628 -2.298133
+      ESP Fit Center  572 is at  -1.799117 -0.385316 -2.819078
+      ESP Fit Center  573 is at   0.000000 -0.602013  3.000000
+      ESP Fit Center  574 is at   0.000000 -0.602013 -3.000000
+      ESP Fit Center  575 is at   1.310524  1.261219  2.800000
+      ESP Fit Center  576 is at   2.382037  1.261219  2.586863
+      ESP Fit Center  577 is at   1.846281  2.189177  2.586863
+      ESP Fit Center  578 is at   0.774767  2.189177  2.586863
+      ESP Fit Center  579 is at   1.846281  0.333261  2.586863
+      ESP Fit Center  580 is at   3.290423  1.261219  1.979899
+      ESP Fit Center  581 is at   3.025167  2.251169  1.979899
+      ESP Fit Center  582 is at   2.300473  2.975862  1.979899
+      ESP Fit Center  583 is at   1.310524  3.241118  1.979899
+      ESP Fit Center  584 is at   3.025167  0.271270  1.979899
+      ESP Fit Center  585 is at   3.897386  1.261219  1.071514
+      ESP Fit Center  586 is at   3.673740  2.313391  1.071514
+      ESP Fit Center  587 is at   3.041473  3.183633  1.071514
+      ESP Fit Center  588 is at   2.109908  3.721472  1.071514
+      ESP Fit Center  589 is at   4.110524  1.261219  0.000000
+      ESP Fit Center  590 is at   3.921446  2.272696  0.000000
+      ESP Fit Center  591 is at   3.379749  3.147567  0.000000
+      ESP Fit Center  592 is at   2.558591  3.767677  0.000000
+      ESP Fit Center  593 is at   1.568875  4.049275  0.000000
+      ESP Fit Center  594 is at   3.897386  1.261219 -1.071514
+      ESP Fit Center  595 is at   3.673740  2.313391 -1.071514
+      ESP Fit Center  596 is at   3.041473  3.183633 -1.071514
+      ESP Fit Center  597 is at   2.109908  3.721472 -1.071514
+      ESP Fit Center  598 is at   3.290423  1.261219 -1.979899
+      ESP Fit Center  599 is at   3.025167  2.251169 -1.979899
+      ESP Fit Center  600 is at   2.300473  2.975862 -1.979899
+      ESP Fit Center  601 is at   1.310524  3.241118 -1.979899
+      ESP Fit Center  602 is at   3.025167  0.271270 -1.979899
+      ESP Fit Center  603 is at   2.382037  1.261219 -2.586863
+      ESP Fit Center  604 is at   1.846281  2.189177 -2.586863
+      ESP Fit Center  605 is at   0.774767  2.189177 -2.586863
+      ESP Fit Center  606 is at   1.846281  0.333261 -2.586863
+      ESP Fit Center  607 is at   1.310524  1.261219 -2.800000
+      ESP Fit Center  608 is at  -1.675889  1.484615  3.285906
+      ESP Fit Center  609 is at  -0.634568  1.484615  3.048232
+      ESP Fit Center  610 is at  -1.155228  2.386426  3.048232
+      ESP Fit Center  611 is at  -2.196549  2.386426  3.048232
+      ESP Fit Center  612 is at  -2.717210  1.484615  3.048232
+      ESP Fit Center  613 is at  -2.196549  0.582805  3.048232
+      ESP Fit Center  614 is at  -1.155228  0.582805  3.048232
+      ESP Fit Center  615 is at  -1.942928  3.341912  2.382282
+      ESP Fit Center  616 is at  -2.904667  2.902700  2.382282
+      ESP Fit Center  617 is at  -3.476277  2.013257  2.382282
+      ESP Fit Center  618 is at  -3.476277  0.955973  2.382282
+      ESP Fit Center  619 is at  -2.904667  0.066530  2.382282
+      ESP Fit Center  620 is at  -3.134747  3.313966  1.419957
+      ESP Fit Center  621 is at  -3.784000  2.499828  1.419957
+      ESP Fit Center  622 is at  -4.015716  1.484615  1.419957
+      ESP Fit Center  623 is at  -3.784000  0.469402  1.419957
+      ESP Fit Center  624 is at  -0.185528  3.584757  2.162325
+      ESP Fit Center  625 is at   0.872336  3.697403  1.496376
+      ESP Fit Center  626 is at   0.073294  4.389776  1.496376
+      ESP Fit Center  627 is at  -0.973227  4.540243  1.496376
+      ESP Fit Center  628 is at  -1.934966  4.101032  1.496376
+      ESP Fit Center  629 is at   0.752670  4.512297  0.534050
+      ESP Fit Center  630 is at  -0.185528  4.964109  0.534050
+      ESP Fit Center  631 is at  -1.226849  4.964109  0.534050
+      ESP Fit Center  632 is at  -2.165047  4.512297  0.534050
+      ESP Fit Center  633 is at   0.752670  4.512297 -0.534050
+      ESP Fit Center  634 is at  -0.185528  4.964109 -0.534050
+      ESP Fit Center  635 is at  -1.226849  4.964109 -0.534050
+      ESP Fit Center  636 is at  -2.165047  4.512297 -0.534050
+      ESP Fit Center  637 is at   0.872336  3.697403 -1.496376
+      ESP Fit Center  638 is at   0.073294  4.389776 -1.496376
+      ESP Fit Center  639 is at  -0.973227  4.540243 -1.496376
+      ESP Fit Center  640 is at  -1.934966  4.101032 -1.496376
+      ESP Fit Center  641 is at  -0.185528  3.584757 -2.162325
+      ESP Fit Center  642 is at  -3.134747  3.313966 -1.419957
+      ESP Fit Center  643 is at  -3.784000  2.499828 -1.419957
+      ESP Fit Center  644 is at  -4.015716  1.484615 -1.419957
+      ESP Fit Center  645 is at  -3.784000  0.469402 -1.419957
+      ESP Fit Center  646 is at  -1.942928  3.341912 -2.382282
+      ESP Fit Center  647 is at  -2.904667  2.902700 -2.382282
+      ESP Fit Center  648 is at  -3.476277  2.013257 -2.382282
+      ESP Fit Center  649 is at  -3.476277  0.955973 -2.382282
+      ESP Fit Center  650 is at  -2.904667  0.066530 -2.382282
+      ESP Fit Center  651 is at  -0.634568  1.484615 -3.048232
+      ESP Fit Center  652 is at  -1.155228  2.386426 -3.048232
+      ESP Fit Center  653 is at  -2.196549  2.386426 -3.048232
+      ESP Fit Center  654 is at  -2.717210  1.484615 -3.048232
+      ESP Fit Center  655 is at  -2.196549  0.582805 -3.048232
+      ESP Fit Center  656 is at  -1.155228  0.582805 -3.048232
+      ESP Fit Center  657 is at  -1.675889  1.484615 -3.285906
+      ESP Fit Center  658 is at   1.159857 -2.121598  3.289827
+      ESP Fit Center  659 is at   2.201178 -2.121598  3.052153
+      ESP Fit Center  660 is at   1.680517 -1.219787  3.052153
+      ESP Fit Center  661 is at   0.639196 -1.219787  3.052153
+      ESP Fit Center  662 is at   0.118536 -2.121598  3.052153
+      ESP Fit Center  663 is at   0.639196 -3.023408  3.052153
+      ESP Fit Center  664 is at   1.680517 -3.023408  3.052153
+      ESP Fit Center  665 is at   3.036253 -2.121598  2.386203
+      ESP Fit Center  666 is at  -0.068921 -3.539683  2.386203
+      ESP Fit Center  667 is at   0.892818 -3.978894  2.386203
+      ESP Fit Center  668 is at   1.939340 -3.828427  2.386203
+      ESP Fit Center  669 is at   2.738381 -3.136054  2.386203
+      ESP Fit Center  670 is at   0.639196 -4.402761  1.423878
+      ESP Fit Center  671 is at   1.680517 -4.402761  1.423878
+      ESP Fit Center  672 is at   2.618715 -3.950948  1.423878
+      ESP Fit Center  673 is at   3.267968 -3.136811  1.423878
+      ESP Fit Center  674 is at   3.933840 -0.857768  1.496376
+      ESP Fit Center  675 is at   3.635969  0.156688  1.496376
+      ESP Fit Center  676 is at   4.397271 -0.857768  0.534050
+      ESP Fit Center  677 is at   4.165556  0.157445  0.534050
+      ESP Fit Center  678 is at   4.165556 -1.872981  0.534050
+      ESP Fit Center  679 is at   4.397271 -0.857768 -0.534050
+      ESP Fit Center  680 is at   4.165556  0.157445 -0.534050
+      ESP Fit Center  681 is at   4.165556 -1.872981 -0.534050
+      ESP Fit Center  682 is at   3.933840 -0.857768 -1.496376
+      ESP Fit Center  683 is at   3.635969  0.156688 -1.496376
+      ESP Fit Center  684 is at   0.639196 -4.402761 -1.423878
+      ESP Fit Center  685 is at   1.680517 -4.402761 -1.423878
+      ESP Fit Center  686 is at   2.618715 -3.950948 -1.423878
+      ESP Fit Center  687 is at   3.267968 -3.136811 -1.423878
+      ESP Fit Center  688 is at   3.036253 -2.121598 -2.386203
+      ESP Fit Center  689 is at  -0.068921 -3.539683 -2.386203
+      ESP Fit Center  690 is at   0.892818 -3.978894 -2.386203
+      ESP Fit Center  691 is at   1.939340 -3.828427 -2.386203
+      ESP Fit Center  692 is at   2.738381 -3.136054 -2.386203
+      ESP Fit Center  693 is at   2.201178 -2.121598 -3.052153
+      ESP Fit Center  694 is at   1.680517 -1.219787 -3.052153
+      ESP Fit Center  695 is at   0.639196 -1.219787 -3.052153
+      ESP Fit Center  696 is at   0.118536 -2.121598 -3.052153
+      ESP Fit Center  697 is at   0.639196 -3.023408 -3.052153
+      ESP Fit Center  698 is at   1.680517 -3.023408 -3.052153
+      ESP Fit Center  699 is at   1.159857 -2.121598 -3.289827
+      ESP Fit Center  700 is at  -1.909594 -4.195439 -0.353580
+      ESP Fit Center  701 is at  -3.497045 -2.929489 -1.421681
+      ESP Fit Center  702 is at  -2.847792 -3.743627 -1.421681
+      ESP Fit Center  703 is at  -1.909594 -4.195439 -1.421681
+      ESP Fit Center  704 is at  -0.868273 -4.195439 -1.421681
+      ESP Fit Center  705 is at  -3.189322 -1.385634 -2.384006
+      ESP Fit Center  706 is at  -3.189322 -2.442918 -2.384006
+      ESP Fit Center  707 is at  -2.617712 -3.332361 -2.384006
+      ESP Fit Center  708 is at  -1.655973 -3.771573 -2.384006
+      ESP Fit Center  709 is at  -0.609451 -3.621106 -2.384006
+      ESP Fit Center  710 is at  -0.347613 -1.914276 -3.049956
+      ESP Fit Center  711 is at  -0.868273 -1.012466 -3.049956
+      ESP Fit Center  712 is at  -1.909594 -1.012466 -3.049956
+      ESP Fit Center  713 is at  -2.430255 -1.914276 -3.049956
+      ESP Fit Center  714 is at  -1.909594 -2.816087 -3.049956
+      ESP Fit Center  715 is at  -0.868273 -2.816087 -3.049956
+      ESP Fit Center  716 is at  -1.388934 -1.914276 -3.287631
+      ESP Fit Center  717 is at  -3.907375 -0.029914  1.496376
+      ESP Fit Center  718 is at  -3.907375 -1.087197  1.496376
+      ESP Fit Center  719 is at  -4.215098  0.456658  0.534050
+      ESP Fit Center  720 is at  -4.446813 -0.558555  0.534050
+      ESP Fit Center  721 is at  -4.215098  0.456658 -0.534050
+      ESP Fit Center  722 is at  -4.446813 -0.558555 -0.534050
+      ESP Fit Center  723 is at  -3.907375 -0.029914 -1.496376
+      ESP Fit Center  724 is at  -3.907375 -1.087197 -1.496376
+      ESP Fit Center  725 is at  -1.388934 -1.914276  3.287631
+      ESP Fit Center  726 is at  -0.347613 -1.914276  3.049956
+      ESP Fit Center  727 is at  -0.868273 -1.012466  3.049956
+      ESP Fit Center  728 is at  -1.909594 -1.012466  3.049956
+      ESP Fit Center  729 is at  -2.430255 -1.914276  3.049956
+      ESP Fit Center  730 is at  -1.909594 -2.816087  3.049956
+      ESP Fit Center  731 is at  -0.868273 -2.816087  3.049956
+      ESP Fit Center  732 is at  -3.189322 -1.385634  2.384006
+      ESP Fit Center  733 is at  -3.189322 -2.442918  2.384006
+      ESP Fit Center  734 is at  -2.617712 -3.332361  2.384006
+      ESP Fit Center  735 is at  -1.655973 -3.771573  2.384006
+      ESP Fit Center  736 is at  -0.609451 -3.621106  2.384006
+      ESP Fit Center  737 is at  -3.497045 -2.929489  1.421681
+      ESP Fit Center  738 is at  -2.847792 -3.743627  1.421681
+      ESP Fit Center  739 is at  -1.909594 -4.195439  1.421681
+      ESP Fit Center  740 is at  -0.868273 -4.195439  1.421681
+      ESP Fit Center  741 is at  -1.909594 -4.195439  0.353580
+ Entering OneElI...
+ OneElI was handed    33535540 working-precision words.
+ Calculate electrostatic properties
+    NBasis =   108  MinDer = 0  MaxDer = 0
+    NGrid  =   741  NMatD  =   1
+ Requested accuracy = 0.1000D-05
+ PrsmSu:  NPrtUS=   2 ThrOK=T IAlg=1 NPAlg=1 LenDen=           0.
+ Prism:   IPart=     0 DynPar=F LinDyn=F Incr=         512.
+ PRISM was handed    16705806 working-precision words and   732 shell-pairs
+ PRISM was handed    16705806 working-precision words and   732 shell-pairs
+ IPart=  1 NShTot=      266760 NBatch=         613 AvBLen=       435.2
+ IPart=  0 NShTot=      275652 NBatch=         641 AvBLen=       430.0
+ PrSmSu:  NxtVal=           1025.
+     726 points will be used for fitting atomic charges
+ Fitting point charges to electrostatic potential
+ Charges from ESP fit, RMS=   0.00082 RRMS=   0.04277:
+ Charge=   0.00000 Dipole=    -3.3517    -2.2588     0.0000 Tot=     4.0418
+              1
+     1  C    0.694590
+     2  C   -0.491066
+     3  C   -0.316384
+     4  C   -0.303406
+     5  N   -0.135537
+     6  O   -0.614573
+     7  H    0.137481
+     8  H    0.146499
+     9  H    0.137481
+    10  H    0.116012
+    11  H    0.153493
+    12  H    0.116012
+    13  H    0.120678
+    14  H    0.118042
+    15  H    0.120678
+ Charges from ESP fit with hydrogens summed into heavy atoms:
+              1
+     1  C    0.694590
+     2  C   -0.069606
+     3  C    0.069134
+     4  C    0.055992
+     5  N   -0.135537
+     6  O   -0.614573
+     7  H    0.000000
+     8  H    0.000000
+     9  H    0.000000
+    10  H    0.000000
+    11  H    0.000000
+    12  H    0.000000
+    13  H    0.000000
+    14  H    0.000000
+    15  H    0.000000
+ -----------------------------------------------------------------
+
+              Electrostatic Properties (Atomic Units)
+
+ -----------------------------------------------------------------
+    Center     Electric         -------- Electric Field --------
+               Potential          X             Y             Z
+ -----------------------------------------------------------------
+    1 Atom    -14.606973
+    2 Atom    -14.719218
+    3 Atom    -14.700525
+    4 Atom    -14.679892
+    5 Atom    -18.307042
+    6 Atom    -22.363798
+    7 Atom     -1.091901
+    8 Atom     -1.107789
+    9 Atom     -1.091901
+   10 Atom     -1.116981
+   11 Atom     -1.116200
+   12 Atom     -1.116981
+   13 Atom     -1.103092
+   14 Atom     -1.090887
+   15 Atom     -1.103092
+   16 Fit       0.000579
+   17 Fit       0.000579
+   18 Fit      -0.000359
+   19 Fit       0.010277
+   20 Fit       0.015596
+   21 Fit       0.024248
+   22 Fit      -0.000359
+   23 Fit      -0.011913
+   24 Fit       0.012237
+   25 Fit       0.010384
+   26 Fit       0.009045
+   27 Fit       0.005607
+   28 Fit      -0.011913
+   29 Fit       0.019464
+   30 Fit       0.023368
+   31 Fit       0.021208
+   32 Fit       0.019003
+   33 Fit       0.016747
+   34 Fit       0.019464
+   35 Fit      -0.003044
+   36 Fit      -0.003044
+   37 Fit      -0.038004
+   38 Fit      -0.053396
+   39 Fit      -0.053934
+   40 Fit      -0.035134
+   41 Fit      -0.038227
+   42 Fit      -0.059198
+   43 Fit      -0.062862
+   44 Fit      -0.060379
+   45 Fit      -0.040915
+   46 Fit      -0.060496
+   47 Fit      -0.064461
+   48 Fit      -0.064982
+   49 Fit      -0.055443
+   50 Fit      -0.059198
+   51 Fit      -0.062862
+   52 Fit      -0.060379
+   53 Fit      -0.040915
+   54 Fit      -0.053396
+   55 Fit      -0.053934
+   56 Fit      -0.035134
+   57 Fit      -0.038227
+   58 Fit      -0.038004
+   59 Fit       0.015220
+   60 Fit       0.009249
+   61 Fit       0.008435
+   62 Fit       0.016414
+   63 Fit       0.021370
+   64 Fit       0.017803
+   65 Fit       0.011656
+   66 Fit       0.017858
+   67 Fit       0.023816
+   68 Fit       0.016619
+   69 Fit       0.025892
+   70 Fit      -0.018099
+   71 Fit      -0.001232
+   72 Fit       0.006058
+   73 Fit      -0.015666
+   74 Fit       0.002376
+   75 Fit       0.007332
+   76 Fit      -0.015666
+   77 Fit       0.002376
+   78 Fit       0.007332
+   79 Fit      -0.018099
+   80 Fit      -0.001232
+   81 Fit       0.006058
+   82 Fit       0.016619
+   83 Fit       0.025892
+   84 Fit       0.011656
+   85 Fit       0.017858
+   86 Fit       0.023816
+   87 Fit       0.009249
+   88 Fit       0.008435
+   89 Fit       0.016414
+   90 Fit       0.021370
+   91 Fit       0.017803
+   92 Fit       0.015220
+   93 Fit       0.007682
+   94 Fit       0.003949
+   95 Fit      -0.002076
+   96 Fit       0.006392
+   97 Fit       0.013855
+   98 Fit       0.011172
+   99 Fit       0.002255
+  100 Fit       0.014627
+  101 Fit       0.011854
+  102 Fit       0.008280
+  103 Fit       0.012681
+  104 Fit       0.010228
+  105 Fit       0.009233
+  106 Fit      -0.008232
+  107 Fit      -0.034004
+  108 Fit      -0.005476
+  109 Fit      -0.029898
+  110 Fit       0.002354
+  111 Fit      -0.005476
+  112 Fit      -0.029898
+  113 Fit       0.002354
+  114 Fit      -0.008232
+  115 Fit      -0.034004
+  116 Fit       0.012681
+  117 Fit       0.010228
+  118 Fit       0.009233
+  119 Fit       0.002255
+  120 Fit       0.014627
+  121 Fit       0.011854
+  122 Fit       0.008280
+  123 Fit       0.003949
+  124 Fit      -0.002076
+  125 Fit       0.006392
+  126 Fit       0.013855
+  127 Fit       0.011172
+  128 Fit       0.007682
+  129 Fit       0.018571
+  130 Fit       0.016517
+  131 Fit       0.020442
+  132 Fit       0.019436
+  133 Fit       0.018927
+  134 Fit       0.017963
+  135 Fit       0.013787
+  136 Fit       0.012090
+  137 Fit       0.016899
+  138 Fit       0.018671
+  139 Fit       0.018040
+  140 Fit       0.016150
+  141 Fit       0.026015
+  142 Fit       0.021145
+  143 Fit       0.026287
+  144 Fit       0.023147
+  145 Fit       0.026287
+  146 Fit       0.023147
+  147 Fit       0.026015
+  148 Fit       0.021145
+  149 Fit       0.016150
+  150 Fit       0.013787
+  151 Fit       0.012090
+  152 Fit       0.016899
+  153 Fit       0.018671
+  154 Fit       0.018040
+  155 Fit       0.020442
+  156 Fit       0.019436
+  157 Fit       0.018927
+  158 Fit       0.017963
+  159 Fit       0.018571
+  160 Fit       0.016517
+  161 Fit      -0.002133
+  162 Fit      -0.020101
+  163 Fit      -0.020101
+  164 Fit      -0.002133
+  165 Fit      -0.001099
+  166 Fit       0.007786
+  167 Fit       0.012035
+  168 Fit       0.007786
+  169 Fit       0.012035
+  170 Fit      -0.001099
+  171 Fit      -0.010846
+  172 Fit       0.002829
+  173 Fit       0.002829
+  174 Fit      -0.010846
+  175 Fit       0.016115
+  176 Fit       0.018747
+  177 Fit       0.018747
+  178 Fit       0.016115
+  179 Fit      -0.000256
+  180 Fit      -0.000256
+  181 Fit      -0.029190
+  182 Fit      -0.040952
+  183 Fit      -0.041127
+  184 Fit      -0.026924
+  185 Fit      -0.029493
+  186 Fit      -0.046350
+  187 Fit      -0.049599
+  188 Fit      -0.046240
+  189 Fit      -0.031042
+  190 Fit      -0.048183
+  191 Fit      -0.052137
+  192 Fit      -0.052168
+  193 Fit      -0.045647
+  194 Fit      -0.048183
+  195 Fit      -0.052137
+  196 Fit      -0.052168
+  197 Fit      -0.045647
+  198 Fit      -0.046350
+  199 Fit      -0.049599
+  200 Fit      -0.046240
+  201 Fit      -0.031042
+  202 Fit      -0.040952
+  203 Fit      -0.041127
+  204 Fit      -0.026924
+  205 Fit      -0.029493
+  206 Fit      -0.029190
+  207 Fit       0.011811
+  208 Fit       0.006353
+  209 Fit       0.005898
+  210 Fit       0.011005
+  211 Fit       0.015589
+  212 Fit       0.016806
+  213 Fit       0.012579
+  214 Fit       0.008247
+  215 Fit       0.013095
+  216 Fit       0.017450
+  217 Fit       0.021110
+  218 Fit       0.013315
+  219 Fit       0.018050
+  220 Fit      -0.005300
+  221 Fit       0.002497
+  222 Fit      -0.019429
+  223 Fit      -0.002989
+  224 Fit       0.003573
+  225 Fit       0.006482
+  226 Fit      -0.029889
+  227 Fit      -0.007267
+  228 Fit       0.001930
+  229 Fit       0.005538
+  230 Fit      -0.019429
+  231 Fit      -0.002989
+  232 Fit       0.003573
+  233 Fit       0.006482
+  234 Fit      -0.005300
+  235 Fit       0.002497
+  236 Fit       0.013315
+  237 Fit       0.018050
+  238 Fit       0.008247
+  239 Fit       0.013095
+  240 Fit       0.017450
+  241 Fit       0.021110
+  242 Fit       0.006353
+  243 Fit       0.005898
+  244 Fit       0.011005
+  245 Fit       0.015589
+  246 Fit       0.016806
+  247 Fit       0.012579
+  248 Fit       0.011811
+  249 Fit       0.005617
+  250 Fit       0.002519
+  251 Fit      -0.001998
+  252 Fit       0.001820
+  253 Fit       0.009729
+  254 Fit       0.010513
+  255 Fit       0.007658
+  256 Fit       0.000572
+  257 Fit       0.015675
+  258 Fit       0.011786
+  259 Fit       0.009217
+  260 Fit       0.005803
+  261 Fit       0.012533
+  262 Fit       0.009947
+  263 Fit       0.007991
+  264 Fit       0.005463
+  265 Fit      -0.009696
+  266 Fit      -0.025545
+  267 Fit      -0.008085
+  268 Fit      -0.025834
+  269 Fit      -0.000646
+  270 Fit      -0.007295
+  271 Fit      -0.023407
+  272 Fit      -0.000315
+  273 Fit      -0.008085
+  274 Fit      -0.025834
+  275 Fit      -0.000646
+  276 Fit      -0.009696
+  277 Fit      -0.025545
+  278 Fit       0.012533
+  279 Fit       0.009947
+  280 Fit       0.007991
+  281 Fit       0.005463
+  282 Fit       0.000572
+  283 Fit       0.015675
+  284 Fit       0.011786
+  285 Fit       0.009217
+  286 Fit       0.005803
+  287 Fit       0.002519
+  288 Fit      -0.001998
+  289 Fit       0.001820
+  290 Fit       0.009729
+  291 Fit       0.010513
+  292 Fit       0.007658
+  293 Fit       0.005617
+  294 Fit       0.017477
+  295 Fit       0.016126
+  296 Fit       0.015110
+  297 Fit       0.014908
+  298 Fit       0.016749
+  299 Fit       0.016412
+  300 Fit       0.015943
+  301 Fit       0.015353
+  302 Fit       0.011324
+  303 Fit       0.009763
+  304 Fit       0.013842
+  305 Fit       0.015200
+  306 Fit       0.015452
+  307 Fit       0.014468
+  308 Fit       0.013395
+  309 Fit       0.019579
+  310 Fit       0.023907
+  311 Fit       0.020762
+  312 Fit       0.023171
+  313 Fit       0.021210
+  314 Fit       0.020154
+  315 Fit       0.023907
+  316 Fit       0.020762
+  317 Fit       0.019579
+  318 Fit       0.013395
+  319 Fit       0.011324
+  320 Fit       0.009763
+  321 Fit       0.013842
+  322 Fit       0.015200
+  323 Fit       0.015452
+  324 Fit       0.014468
+  325 Fit       0.016749
+  326 Fit       0.016412
+  327 Fit       0.015943
+  328 Fit       0.015353
+  329 Fit       0.017477
+  330 Fit       0.016126
+  331 Fit       0.015110
+  332 Fit       0.014908
+  333 Fit      -0.002934
+  334 Fit      -0.018673
+  335 Fit      -0.015764
+  336 Fit      -0.018673
+  337 Fit      -0.015764
+  338 Fit      -0.002934
+  339 Fit      -0.001265
+  340 Fit       0.002345
+  341 Fit       0.006916
+  342 Fit       0.007561
+  343 Fit       0.011077
+  344 Fit       0.015961
+  345 Fit       0.006916
+  346 Fit       0.002345
+  347 Fit      -0.001265
+  348 Fit      -0.009147
+  349 Fit      -0.004544
+  350 Fit       0.001352
+  351 Fit       0.011290
+  352 Fit       0.008763
+  353 Fit       0.006909
+  354 Fit       0.004446
+  355 Fit       0.001222
+  356 Fit       0.001352
+  357 Fit      -0.004544
+  358 Fit      -0.009147
+  359 Fit       0.013756
+  360 Fit       0.017183
+  361 Fit       0.016431
+  362 Fit       0.016723
+  363 Fit       0.015706
+  364 Fit       0.014748
+  365 Fit       0.013658
+  366 Fit       0.016431
+  367 Fit       0.017183
+  368 Fit       0.013756
+  369 Fit       0.001063
+  370 Fit       0.001063
+  371 Fit      -0.022898
+  372 Fit      -0.032934
+  373 Fit      -0.033077
+  374 Fit      -0.020837
+  375 Fit      -0.022993
+  376 Fit      -0.037674
+  377 Fit      -0.040730
+  378 Fit      -0.038543
+  379 Fit      -0.028643
+  380 Fit      -0.039298
+  381 Fit      -0.043068
+  382 Fit      -0.043145
+  383 Fit      -0.038467
+  384 Fit      -0.039298
+  385 Fit      -0.043068
+  386 Fit      -0.043145
+  387 Fit      -0.038467
+  388 Fit      -0.037674
+  389 Fit      -0.040730
+  390 Fit      -0.038543
+  391 Fit      -0.028643
+  392 Fit      -0.032934
+  393 Fit      -0.033077
+  394 Fit      -0.020837
+  395 Fit      -0.022993
+  396 Fit      -0.022898
+  397 Fit       0.009473
+  398 Fit       0.003661
+  399 Fit       0.003931
+  400 Fit       0.008937
+  401 Fit       0.013158
+  402 Fit       0.014347
+  403 Fit       0.010005
+  404 Fit       0.005538
+  405 Fit       0.009627
+  406 Fit       0.013382
+  407 Fit       0.016890
+  408 Fit       0.019440
+  409 Fit       0.010340
+  410 Fit       0.014066
+  411 Fit       0.018952
+  412 Fit      -0.006248
+  413 Fit       0.001874
+  414 Fit      -0.022980
+  415 Fit      -0.006511
+  416 Fit       0.000920
+  417 Fit       0.004574
+  418 Fit      -0.011137
+  419 Fit      -0.001305
+  420 Fit       0.003263
+  421 Fit       0.005783
+  422 Fit      -0.022980
+  423 Fit      -0.006511
+  424 Fit       0.000920
+  425 Fit       0.004574
+  426 Fit      -0.006248
+  427 Fit       0.001874
+  428 Fit       0.010340
+  429 Fit       0.014066
+  430 Fit       0.018952
+  431 Fit       0.005538
+  432 Fit       0.009627
+  433 Fit       0.013382
+  434 Fit       0.016890
+  435 Fit       0.019440
+  436 Fit       0.003661
+  437 Fit       0.003931
+  438 Fit       0.008937
+  439 Fit       0.013158
+  440 Fit       0.014347
+  441 Fit       0.010005
+  442 Fit       0.009473
+  443 Fit       0.004368
+  444 Fit       0.001293
+  445 Fit      -0.003058
+  446 Fit       0.001155
+  447 Fit       0.008797
+  448 Fit       0.009078
+  449 Fit       0.006137
+  450 Fit      -0.000485
+  451 Fit       0.012728
+  452 Fit       0.009645
+  453 Fit       0.007214
+  454 Fit       0.004097
+  455 Fit       0.010690
+  456 Fit       0.008429
+  457 Fit       0.006475
+  458 Fit      -0.009805
+  459 Fit      -0.024934
+  460 Fit      -0.008898
+  461 Fit      -0.023645
+  462 Fit      -0.001804
+  463 Fit      -0.008366
+  464 Fit      -0.022086
+  465 Fit      -0.001674
+  466 Fit      -0.008898
+  467 Fit      -0.023645
+  468 Fit      -0.001804
+  469 Fit      -0.009805
+  470 Fit      -0.024934
+  471 Fit       0.010690
+  472 Fit       0.008429
+  473 Fit       0.006475
+  474 Fit      -0.000485
+  475 Fit       0.012728
+  476 Fit       0.009645
+  477 Fit       0.007214
+  478 Fit       0.004097
+  479 Fit       0.001293
+  480 Fit      -0.003058
+  481 Fit       0.001155
+  482 Fit       0.008797
+  483 Fit       0.009078
+  484 Fit       0.006137
+  485 Fit       0.004368
+  486 Fit       0.015186
+  487 Fit       0.014111
+  488 Fit       0.013395
+  489 Fit       0.015868
+  490 Fit       0.014836
+  491 Fit       0.014281
+  492 Fit       0.013726
+  493 Fit       0.013413
+  494 Fit       0.009449
+  495 Fit       0.008267
+  496 Fit       0.012554
+  497 Fit       0.013449
+  498 Fit       0.013344
+  499 Fit       0.012396
+  500 Fit       0.011506
+  501 Fit       0.017626
+  502 Fit       0.019316
+  503 Fit       0.017752
+  504 Fit       0.020791
+  505 Fit       0.019329
+  506 Fit       0.018109
+  507 Fit       0.019316
+  508 Fit       0.017752
+  509 Fit       0.017626
+  510 Fit       0.011506
+  511 Fit       0.009449
+  512 Fit       0.008267
+  513 Fit       0.012554
+  514 Fit       0.013449
+  515 Fit       0.013344
+  516 Fit       0.012396
+  517 Fit       0.015868
+  518 Fit       0.014836
+  519 Fit       0.014281
+  520 Fit       0.013726
+  521 Fit       0.013413
+  522 Fit       0.015186
+  523 Fit       0.014111
+  524 Fit       0.013395
+  525 Fit      -0.002998
+  526 Fit      -0.014609
+  527 Fit      -0.012608
+  528 Fit      -0.014609
+  529 Fit      -0.012608
+  530 Fit      -0.002998
+  531 Fit      -0.001336
+  532 Fit      -0.016370
+  533 Fit      -0.005505
+  534 Fit       0.001608
+  535 Fit       0.004988
+  536 Fit       0.005888
+  537 Fit       0.008712
+  538 Fit       0.012459
+  539 Fit       0.005888
+  540 Fit       0.008712
+  541 Fit       0.012459
+  542 Fit       0.004988
+  543 Fit      -0.016370
+  544 Fit      -0.005505
+  545 Fit       0.001608
+  546 Fit      -0.001336
+  547 Fit      -0.007570
+  548 Fit      -0.004643
+  549 Fit      -0.013489
+  550 Fit       0.000156
+  551 Fit       0.005776
+  552 Fit       0.003200
+  553 Fit      -0.000004
+  554 Fit       0.005776
+  555 Fit       0.003200
+  556 Fit      -0.000004
+  557 Fit       0.000156
+  558 Fit      -0.004643
+  559 Fit      -0.013489
+  560 Fit      -0.007570
+  561 Fit       0.011802
+  562 Fit       0.014922
+  563 Fit       0.014942
+  564 Fit       0.015641
+  565 Fit       0.014466
+  566 Fit       0.013875
+  567 Fit       0.015641
+  568 Fit       0.014466
+  569 Fit       0.013875
+  570 Fit       0.014942
+  571 Fit       0.014922
+  572 Fit       0.011802
+  573 Fit       0.001594
+  574 Fit       0.001594
+  575 Fit      -0.018324
+  576 Fit      -0.026190
+  577 Fit      -0.026205
+  578 Fit      -0.016762
+  579 Fit      -0.018449
+  580 Fit      -0.030467
+  581 Fit      -0.032923
+  582 Fit      -0.031541
+  583 Fit      -0.025435
+  584 Fit      -0.023969
+  585 Fit      -0.032339
+  586 Fit      -0.035538
+  587 Fit      -0.035674
+  588 Fit      -0.032385
+  589 Fit      -0.032814
+  590 Fit      -0.036169
+  591 Fit      -0.036867
+  592 Fit      -0.034988
+  593 Fit      -0.028940
+  594 Fit      -0.032339
+  595 Fit      -0.035538
+  596 Fit      -0.035674
+  597 Fit      -0.032385
+  598 Fit      -0.030467
+  599 Fit      -0.032923
+  600 Fit      -0.031541
+  601 Fit      -0.025435
+  602 Fit      -0.023969
+  603 Fit      -0.026190
+  604 Fit      -0.026205
+  605 Fit      -0.016762
+  606 Fit      -0.018449
+  607 Fit      -0.018324
+  608 Fit       0.007748
+  609 Fit       0.002706
+  610 Fit       0.003252
+  611 Fit       0.007468
+  612 Fit       0.010953
+  613 Fit       0.011845
+  614 Fit       0.008056
+  615 Fit       0.004674
+  616 Fit       0.008327
+  617 Fit       0.011501
+  618 Fit       0.014278
+  619 Fit       0.016032
+  620 Fit       0.008061
+  621 Fit       0.011024
+  622 Fit       0.014245
+  623 Fit       0.018155
+  624 Fit      -0.006085
+  625 Fit      -0.020296
+  626 Fit      -0.007065
+  627 Fit      -0.000284
+  628 Fit       0.003673
+  629 Fit      -0.013695
+  630 Fit      -0.003923
+  631 Fit       0.001119
+  632 Fit       0.004086
+  633 Fit      -0.013695
+  634 Fit      -0.003923
+  635 Fit       0.001119
+  636 Fit       0.004086
+  637 Fit      -0.020296
+  638 Fit      -0.007065
+  639 Fit      -0.000284
+  640 Fit       0.003673
+  641 Fit      -0.006085
+  642 Fit       0.008061
+  643 Fit       0.011024
+  644 Fit       0.014245
+  645 Fit       0.018155
+  646 Fit       0.004674
+  647 Fit       0.008327
+  648 Fit       0.011501
+  649 Fit       0.014278
+  650 Fit       0.016032
+  651 Fit       0.002706
+  652 Fit       0.003252
+  653 Fit       0.007468
+  654 Fit       0.010953
+  655 Fit       0.011845
+  656 Fit       0.008056
+  657 Fit       0.007748
+  658 Fit       0.003521
+  659 Fit       0.000832
+  660 Fit      -0.002476
+  661 Fit       0.001310
+  662 Fit       0.007296
+  663 Fit       0.007530
+  664 Fit       0.004914
+  665 Fit      -0.000963
+  666 Fit       0.011053
+  667 Fit       0.008351
+  668 Fit       0.006033
+  669 Fit       0.003150
+  670 Fit       0.009211
+  671 Fit       0.007169
+  672 Fit       0.005137
+  673 Fit       0.002535
+  674 Fit      -0.009323
+  675 Fit      -0.021554
+  676 Fit      -0.008884
+  677 Fit      -0.020209
+  678 Fit      -0.002732
+  679 Fit      -0.008884
+  680 Fit      -0.020209
+  681 Fit      -0.002732
+  682 Fit      -0.009323
+  683 Fit      -0.021554
+  684 Fit       0.009211
+  685 Fit       0.007169
+  686 Fit       0.005137
+  687 Fit       0.002535
+  688 Fit      -0.000963
+  689 Fit       0.011053
+  690 Fit       0.008351
+  691 Fit       0.006033
+  692 Fit       0.003150
+  693 Fit       0.000832
+  694 Fit      -0.002476
+  695 Fit       0.001310
+  696 Fit       0.007296
+  697 Fit       0.007530
+  698 Fit       0.004914
+  699 Fit       0.003521
+  700 Fit       0.012918
+  701 Fit       0.013945
+  702 Fit       0.013072
+  703 Fit       0.012421
+  704 Fit       0.012044
+  705 Fit       0.013911
+  706 Fit       0.013074
+  707 Fit       0.012559
+  708 Fit       0.012062
+  709 Fit       0.011716
+  710 Fit       0.008215
+  711 Fit       0.007617
+  712 Fit       0.011054
+  713 Fit       0.011826
+  714 Fit       0.011580
+  715 Fit       0.010651
+  716 Fit       0.010066
+  717 Fit       0.017154
+  718 Fit       0.015920
+  719 Fit       0.017749
+  720 Fit       0.016576
+  721 Fit       0.017749
+  722 Fit       0.016576
+  723 Fit       0.017154
+  724 Fit       0.015920
+  725 Fit       0.010066
+  726 Fit       0.008215
+  727 Fit       0.007617
+  728 Fit       0.011054
+  729 Fit       0.011826
+  730 Fit       0.011580
+  731 Fit       0.010651
+  732 Fit       0.013911
+  733 Fit       0.013074
+  734 Fit       0.012559
+  735 Fit       0.012062
+  736 Fit       0.011716
+  737 Fit       0.013945
+  738 Fit       0.013072
+  739 Fit       0.012421
+  740 Fit       0.012044
+  741 Fit       0.012918
+ -----------------------------------------------------------------
+ Leave Link  602 at Sat Feb 17 21:03:36 2018, MaxMem=   33554432 cpu:       0.2
+
+ Test job not archived.
+ 1\1\GINC-NODE049\SP\RHF\6-31G(d)\C4H9N1O1\WULSDORT\17-Feb-2018\0\\#HF/
+ 6-31G* Geom=AllCheck Guess=Read Pop=(MK,ReadRadii) Integral=(Grid=Ultr
+ aFine) iop(6/33=2)\\Optimization for frag42-conf0\\0,1\C,0,0.890136281
+ 2,-0.42057648,1.8105234845\C,0,0.3861333776,-1.0297590581,0.5058899812
+ \C,0,2.5762019567,0.8905474537,2.9940294247\C,0,2.8724295281,0.5226008
+ 983,0.5834283382\N,0,2.0661782296,0.2956779948,1.7683038698\O,0,0.2600
+ 302772,-0.5714790271,2.8522672348\H,0,1.0989582375,-1.7469322569,0.083
+ 1689656\H,0,-0.5435798297,-1.5512596335,0.7350340176\H,0,0.1854338255,
+ -0.2669192966,-0.254994322\H,0,3.5735188172,0.4946250661,3.2293114316\
+ H,0,1.887975989,0.6506276381,3.8031852259\H,0,2.6559510446,1.981188728
+ 3,2.8896513956\H,0,2.9693283788,1.5987258801,0.380699698\H,0,2.4311690
+ 831,0.050053587,-0.2926985725\H,0,3.8846307819,0.1158323731,0.71952115
+ 23\\Version=AM64L-G09RevC.01\State=1-A'\HF=-286.0275649\RMSD=4.652e-09
+ \Dipole=0.9873251,0.3372443,-1.1911983\Quadrupole=-0.8344403,0.7340305
+ ,0.1004097,0.0108219,3.1097071,1.8740262\PG=CS [SG(C4H3N1O1),X(H6)]\\@
+
+
+ When cryptography is outlawed, bayl bhgynjf jvyy unir cevinpl.
+ Job cpu time:  0 days  0 hours  0 minutes  6.9 seconds.
+ File lengths (MBytes):  RWF=      9 Int=      0 D2E=      0 Chk=      2 Scr=      1
+ Normal termination of Gaussian 09 at Sat Feb 17 21:03:36 2018.

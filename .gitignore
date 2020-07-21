@@ -1,0 +1,12 @@
+*.pyc
+*.egg-info
+build
+dist
+*~
+example/*_dir
+example/*.pickle
+example/datadump*
+example/results*
+example/remap*
+example/stdout
+example/stderr

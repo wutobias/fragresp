@@ -1,0 +1,865 @@
+init
+name (E)acetaldehyde O-methylcarbamoyl oxime
+linker CC=NOC(=O)NC
+terminal off
+lcap N=CC
+lanc 3 4 5 6 7
+lancmap 2 3 4 5 -1
+rcap OC(=O)NC
+ranc 0 1 2
+rancmap -1 8 9
+breakring off
+# 1,5-Dimethylgustav surrogate
+surrogate C=NOC(=O)N[C@@H](C)C=NOC(=O)N
+s_lanc 0 1
+s_ranc 10 11 12 13
+end
+
+init
+name Tetraorganyllurea
+linker CN(C)C(=O)N(C)C
+terminal off
+lcap N(C)C
+lanc 3 4 5 6 7
+lancmap 1 2 3 -1 -1
+rcap C(=O)N(C)C
+ranc 0 1 2
+rancmap -1 7 -1
+breakring off
+surrogate NC(=O)N(C)C(C)N(C)C(=O)N
+s_lanc 0
+s_ranc 9 10 11
+end
+
+init
+name Triorganyllurea
+linker CN(C)C(=O)NC
+terminal off
+lcap N(C)C
+lanc 3 4 5 6
+lancmap 1 2 3 -1
+rcap C(=O)NC
+ranc 0 1 2
+rancmap -1 6 -1
+breakring off
+surrogate NC(=O)N[C@@H](C)N(C)C(=O)N
+s_lanc 0
+s_ranc 8 9 10
+end
+
+init
+name Diorganylrea
+linker CNC(=O)NC
+terminal off
+lcap NC
+lanc 2 3 4 5
+lancmap 1 2 3 -1
+rcap C(=O)NC
+ranc 0 1
+rancmap -1 6
+breakring off
+surrogate NC(=O)NC(C)NC(=O)N
+s_lanc 0
+s_ranc 7 8 9
+end
+
+init
+name Secondary O-organyl thiocarbamate
+linker CN(C)C(=S)OC
+terminal off
+lcap N(C)C
+lanc 3 4 5 6
+lancmap 1 2 3 -1
+rcap C(=S)OC
+ranc 0 1 2
+rancmap -1 6 -1
+breakring off
+surrogate NC(=S)O[C@@H](C)N(C)C(=S)O
+s_lanc 0
+s_ranc 8 9 10
+end
+
+init
+name Primary O-organyl thiocarbamate
+linker CNC(=S)OC
+terminal off
+lcap NC
+lanc 2 3 4 5
+lancmap 1 2 3 -1
+rcap C(=S)OC
+ranc 0 1
+rancmap -1 6
+breakring off
+surrogate NC(=S)O[C@@H](C)NC(=S)O
+s_lanc 0
+s_ranc 7 8 9
+end
+
+init
+name Secondary S-organyl thiocarbamate
+linker CN(C)C(=O)SC
+terminal off
+lcap N(C)C
+lanc 3 4 5 6
+lancmap 1 2 3 -1
+rcap C(=O)SC
+ranc 0 1 2
+rancmap -1 6 -1
+breakring off
+surrogate NC(=O)S[C@@H](C)N(C)C(=O)S
+s_lanc 0
+s_ranc 8 9 10
+end
+
+init
+name Primary S-organyl thiocarbamate
+linker CNC(=O)SC
+terminal off
+lcap NC
+lanc 2 3 4 5
+lancmap 1 2 3 -1
+rcap C(=O)SC
+ranc 0 1
+rancmap -1 6
+breakring off
+surrogate NC(=O)S[C@@H](C)NC(=O)S
+s_lanc 0
+s_ranc 7 8 9
+end
+
+init
+name Secondary Dithiocarbamate
+linker CN(C)C(=S)SC
+terminal off
+lcap N(C)C
+lanc 3 4 5 6
+lancmap 1 2 3 -1
+rcap C(=S)SC
+ranc 0 1 2
+rancmap -1 6 -1
+breakring off
+surrogate NC(=S)S[C@@H](C)N(C)C(=S)S
+s_lanc 0
+s_ranc 8 9 10
+end
+
+init
+name Primary Dithiocarbamate
+linker CNC(=S)SC
+terminal off
+lcap NC
+lanc 2 3 4 5
+lancmap 1 2 3 -1
+rcap C(=S)SC
+ranc 0 1
+rancmap -1 6
+breakring off
+surrogate NC(=S)S[C@@H](C)NC(=S)S
+s_lanc 0
+s_ranc 7 8 9
+end
+
+init
+name Diorganylcarbamate
+linker CN(C)C(=O)OC
+terminal off
+lcap N(C)C
+lanc 3 4 5 6
+lancmap 1 2 3 -1
+rcap C(=O)OC
+ranc 0 1 2
+rancmap -1 6 -1
+breakring off
+surrogate NC(=O)O[C@@H](C)N(C)C(=O)O
+s_lanc 0
+s_ranc 8 9 10
+end
+
+init
+name Carbamate
+linker CNC(=O)OC
+terminal off
+lcap NC
+lanc 2 3 4 5
+lancmap 1 2 3 -1
+rcap C(=O)OC
+ranc 0 1
+rancmap -1 6
+breakring off
+surrogate NC(=O)O[C@@H](C)NC(=O)O
+s_lanc 0
+s_ranc 7 8 9
+end
+
+init
+name Secondary Sulfenamide
+linker CN(C)SC
+terminal off
+lcap N(C)C
+lanc 3 4
+lancmap 1 -1
+rcap SC
+ranc 0 1 2
+rancmap -1 4 -1
+breakring off
+surrogate NS[C@@H](C)N(C)S
+s_lanc 0
+s_ranc 6
+end
+
+init
+name Primary Sulfenamide
+linker CNSC
+terminal off
+lcap NC
+lanc 2 3
+lancmap 1 -1
+rcap SC
+ranc 0 1
+rancmap -1 4
+breakring off
+surrogate NS[C@@H](C)NS
+s_lanc 0
+s_ranc 5
+end
+
+init
+name  Secondary Amide
+linker CN(C)C(=O)C
+terminal off
+lcap N(C)C
+lanc 3 4 5
+lancmap 1 2 -1
+rcap C(=O)C
+ranc 0 1 2
+rancmap -1 5 -1
+breakring off
+surrogate NC(=O)[C@@H](C)N(C)C(=O)
+s_lanc 0
+s_ranc 7 8
+end
+
+init
+name Primary Amide
+linker CNC(=O)C
+terminal off
+lcap NC
+lanc 2 3 4
+lancmap 1 2 -1
+rcap C(=O)C
+ranc 0 1
+rancmap -1 5
+breakring off
+surrogate NC(=O)[C@@H](C)NC(=O)
+s_lanc 0
+s_ranc 6 7
+end
+
+init
+name Secondary Sulfonamide
+linker CN(C)S(=O)(=O)C
+terminal off
+lcap N(C)C
+lanc 3 4 5 6
+lancmap 1 2 3 -1
+rcap S(=O)(=O)C
+ranc 0 1 2
+rancmap -1 6 -1
+breakring off
+surrogate NS(=O)(=O)[C@@H](C)N(C)S(=O)(=O)
+s_lanc 0
+s_ranc 8 9 10
+end
+
+init
+name Primary Sulfonamide
+linker CNS(=O)(=O)C
+terminal off
+lcap NC
+lanc 2 3 4 5
+lancmap 1 2 3 -1
+rcap S(=O)(=O)C
+ranc 0 1
+rancmap -1 6
+breakring off
+surrogate NS(=O)(=O)[C@@H](C)NS(=O)(=O)
+s_lanc 0
+s_ranc 7 8 9
+end
+
+init
+name Ester
+linker COC(=O)C
+terminal off
+lcap OC
+lanc 2 3 4
+lancmap 1 2 -1
+rcap C(=O)C
+ranc 0 1
+rancmap -1 5
+breakring off
+surrogate OC(=O)[C@@H](C)OC(=O)
+s_lanc 0
+s_ranc 6 7
+end
+
+init
+name Ester terminal
+linker COC(=O)
+terminal on
+terminal_anc 1 2 3 
+lcap C
+lanc  1 2 3 
+lancmap 1 2 3 
+rcap OC(=O)
+ranc 0
+rancmap -1
+breakring off
+s_lanc 0
+s_ranc 4 5 6
+end
+
+init
+name Nitro
+linker C[N+](=O)[O-]
+terminal on
+terminal_anc 1 2 3 
+lcap C
+lanc  1 2 3 
+lancmap 1 2 3 
+rcap [N+](=O)[O-]
+ranc 0
+rancmap -1
+breakring off
+s_lanc 0
+s_ranc 4 5 6
+end
+
+init
+name Nitrate
+linker CO[N+](=O)[O-]
+terminal on
+terminal_anc 1 2 3 4
+lcap C
+lanc  1 2 3 4
+lancmap 1 2 3 4
+rcap O[N+](=O)[O-]
+ranc 0
+rancmap -1
+breakring off
+s_lanc 0
+s_ranc 4 5 6 7
+end
+
+init
+name Carboxylic acid
+linker CC(=O)O
+terminal on
+terminal_anc 1 2 3
+lcap C
+lanc  1 2 3
+lancmap 1 2 3
+rcap C(=O)O
+ranc 0
+rancmap -1
+breakring off
+s_lanc 0
+s_ranc 4 5 6
+end
+
+init
+name Phosphotriester
+linker COP(=O)(OC)OC
+terminal off
+lcap OC
+lanc 2 3
+lancmap 1 2
+rcap P(=O)(OC)OC
+ranc 0 1 4 5 6 7
+rancmap -1 9 9 -1 9 -1
+breakring off
+surrogate OP(=O)(OC)OC(C)OP(=O)(OC)O
+s_lanc 0
+s_ranc 9 10 11 12 13
+end
+
+init
+name Trialkythiophosphate
+linker COP(=S)(OC)OC
+terminal off
+lcap OC
+lanc 2 3
+lancmap 1 2
+rcap P(=S)(OC)OC
+ranc 0 1 4 5 6 7
+rancmap -1 9 9 -1 9 -1
+breakring off
+surrogate OP(=S)(OC)OC(C)OP(=S)(OC)O
+s_lanc 0
+s_ranc 9 10 11 12 13
+end
+
+init
+name Trialkydithiophosphate
+linker COP(=S)(SC)OC
+terminal off
+lcap OC
+lanc 2 3 4 5
+lancmap 1 2 3 -1
+rcap P(=S)(SC)OC
+ranc 0 1 6 7
+rancmap -1 8 8 -1
+breakring off
+surrogate OP(=S)(SC)OC(C)OP(=S)(SC)O
+s_lanc 0
+s_ranc 9 10 11 12 13
+end
+
+init
+name Diorganophosphate
+linker COS(=O)(=O)OC
+terminal off
+lcap OC
+lanc 2 3 4 5 6
+lancmap 1 2 3 4 -1
+rcap S(=O)(=O)OC
+ranc 0 1
+rancmap -1 7
+breakring off
+surrogate OS(=O)(=O)OC(C)OS(=O)(=O)O
+s_lanc 0
+s_ranc 8 9 10 11
+end
+
+init
+name Sulfonic ester
+linker COS(=O)(=O)C
+terminal off
+lcap OC
+lanc 2 3 4 5
+lancmap 1 2 3 -1
+rcap S(=O)(=O)C
+ranc 0 1
+rancmap -1 6
+breakring off
+surrogate OS(=O)(=O)[C@@H](C)OS(=O)(=O)
+s_lanc 0
+s_ranc 7 8 9
+end
+
+init
+name Sulfone
+linker CS(=O)(=O)C
+terminal off
+lcap S(=O)(=O)C
+lanc 4
+lancmap -1
+rcap C
+ranc 0 1 2 3
+rancmap -1 5 6 7
+breakring off
+surrogate S(=O)(=O)C(C)S(=O)(=O)C
+s_lanc 0 1 2
+s_ranc 8
+end
+
+init
+name Sulfoxide
+linker CS(=O)C
+terminal off
+lcap S(=O)C
+lanc 3
+lancmap -1
+rcap C
+ranc 0 1 2
+rancmap -1 4 5
+breakring off
+surrogate S(=O)C(C)S(=O)C
+s_lanc 0 1 
+s_ranc 6
+end
+
+init
+name Keton
+linker CC(=O)C
+terminal off
+lcap C(=O)C
+lanc 3
+lancmap -1
+rcap C
+ranc 0 1 2
+rancmap -1 4 5
+breakring off
+surrogate C(=O)C(C)C(=O)C
+s_lanc 0 1 
+s_ranc 6
+end
+
+init
+name Aldehyde
+linker CC(=O)
+terminal on
+terminal_anc 1 2
+lcap C
+lanc  1 2
+lancmap 1 2
+rcap C(=O)
+ranc 0
+rancmap -1
+breakring off
+s_lanc 0
+s_ranc 4 5
+end
+
+init
+name Tertiary amine
+linker CN(C)C
+terminal off
+lcap N(C)C
+lanc 0 2 3
+lancmap -1 -1 -1
+rcap C
+ranc 1
+rancmap 3
+breakring off
+surrogate NC(C)N(C)C
+s_lanc 0 
+s_ranc 5
+end
+
+init
+name Tertiary amine ring
+linker CN(C)C
+terminal off
+lcap N(C)C
+lanc 3
+lancmap -1
+rcap C
+ranc 0 1 2
+rancmap -1 3 -1
+breakring off
+surrogate NC(C)N(C)C
+s_lanc 0 
+s_ranc 5
+end
+
+init
+name Azo
+linker CNNC
+terminal off
+lcap NC
+lanc 2 3
+lancmap 1 -1
+rcap NC
+ranc 0 1
+rancmap -1 4
+breakring off
+surrogate NNC(C)NN
+s_lanc 0 
+s_ranc 5
+end
+
+init
+name Peroxide
+linker COOC
+terminal off
+lcap OC
+lanc 2 3
+lancmap 1 -1
+rcap OC
+ranc 0 1
+rancmap -1 4
+breakring off
+surrogate OOC(C)OO
+s_lanc 0 
+s_ranc 5
+end
+
+init
+name Disulfide
+linker CSSC
+terminal off
+lcap SC
+lanc 2 3
+lancmap 1 -1
+rcap SC
+ranc 0 1
+rancmap -1 4
+breakring off
+surrogate SSC(C)SS
+s_lanc 0 
+s_ranc 5
+end
+
+init
+name Ether
+linker COC
+terminal off
+lcap OC
+lanc 2
+lancmap -1
+rcap C
+ranc 0 1
+rancmap -1 3
+breakring off
+surrogate OC(C)OC
+s_lanc 0 
+s_ranc 4
+end
+
+init
+name Thioether
+linker CSC
+terminal off
+lcap SC
+lanc 2
+lancmap -1
+rcap C
+ranc 0 1
+rancmap -1 3
+breakring off
+surrogate SC(C)SC
+s_lanc 0 
+s_ranc 4
+end
+
+init
+name Secondary amine
+linker CNC
+terminal off
+lcap NC
+lanc 2
+lancmap -1
+rcap C
+ranc 0 1
+rancmap -1 3
+breakring off
+surrogate NC(C)NC
+s_lanc 0 
+s_ranc 4
+end
+
+init
+name Amide terminal
+linker CC(=O)N
+terminal on
+terminal_anc 1 2 3
+lcap C
+lanc  1 2 3
+lancmap 1 2 3
+rcap C(=O)N
+ranc 0
+rancmap -1
+breakring off
+s_lanc 0
+s_ranc 4 5 6
+end
+
+init
+name Cyanide
+linker CC#N
+terminal on
+terminal_anc 1 2
+lcap C
+lanc  1 2
+lancmap 1 2
+rcap C#N
+ranc 0
+rancmap -1
+breakring off
+s_lanc 0
+s_ranc 4 5
+end
+
+init
+name Primary amine
+linker CN
+terminal on
+terminal_anc 1
+lcap C
+lanc  1
+lancmap 1
+rcap N
+ranc 0
+rancmap -1
+breakring off
+s_lanc 0
+s_ranc 4
+end
+
+init
+name Primary alcohol
+linker CO
+terminal on
+terminal_anc 1
+lcap C
+lanc  1
+lancmap 1
+rcap O
+ranc 0
+rancmap -1
+breakring off
+s_lanc 0
+s_ranc 4
+end
+
+init
+name Primary thiol
+linker CS
+terminal on
+terminal_anc 1
+lcap C
+lanc  1
+lancmap 1
+rcap S
+ranc 0
+rancmap -1
+breakring off
+s_lanc 0
+s_ranc 4
+end
+
+init
+name Primary fluoride
+linker CF
+terminal on
+terminal_anc 1
+lcap C
+lanc  1
+lancmap 1
+rcap F
+ranc 0
+rancmap -1
+breakring off
+s_lanc 0
+s_ranc 4
+end
+
+init
+name Primary chloride
+linker CCl
+terminal on
+terminal_anc 1
+lcap C
+lanc  1
+lancmap 1
+rcap Cl
+ranc 0
+rancmap -1
+breakring off
+s_lanc 0
+s_ranc 4
+end
+
+init
+name Primary bromide
+linker CBr
+terminal on
+terminal_anc 1
+lcap C
+lanc  1
+lancmap 1
+rcap Br
+ranc 0
+rancmap -1
+breakring off
+s_lanc 0
+s_ranc 4
+end
+
+init
+name Primary iodide
+linker CI
+terminal on
+terminal_anc 1
+lcap C
+lanc  1
+lancmap 1
+rcap I
+ranc 0
+rancmap -1
+breakring off
+# Iodomethane surrogate
+s_lanc 0
+s_ranc 4
+end
+
+init
+name Neopentane
+linker CC(C)(C)C
+terminal off
+lcap C(C)(C)C
+lanc  4
+lancmap -1
+rcap C
+ranc 0 1 2 3
+rancmap -1 3 -1 -1
+breakring off
+surrogate C[C@@H](C)C(C)(C)C
+s_lanc 0
+s_ranc 6
+end
+
+init
+name Isobutane
+linker CC(C)C
+terminal off
+lcap C(C)C
+lanc  3
+lancmap -1
+rcap C
+ranc 0 1 2
+rancmap -1 3 -1
+breakring off
+surrogate C[C@@H](C)C(C)C
+s_lanc 0
+s_ranc 5
+end
+
+init
+name Propane
+linker CCC
+terminal off
+lcap CC
+lanc  2
+lancmap -1
+rcap C
+ranc 0 1
+rancmap -1 3
+breakring off
+surrogate C[C@@H](C)CC
+s_lanc 0
+s_ranc 4
+end
+
+init
+name Ethan terminal 1
+linker CC
+terminal on
+terminal_anc 1
+lcap C
+lanc  1
+lancmap 1
+rcap C
+ranc 0
+rancmap -1
+breakring off
+s_lanc 0
+s_ranc 4
+end
+
+init
+name Ethan terminal 2
+linker CC
+terminal on
+terminal_anc 0
+lcap C
+lanc  0
+lancmap -1
+rcap C
+ranc 1
+rancmap 1
+breakring off
+s_lanc 4
+s_ranc 0
+end

@@ -1,0 +1,5 @@
+### Input file for FragResp
+database frag_db.pickle
+frag_dir frag_dir
+surr_cap_dir surr_cap_dir
+mol_dir mol_dir

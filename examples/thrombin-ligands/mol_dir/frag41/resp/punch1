@@ -1,0 +1,32 @@
+
+  Mol 41 Conf 0                                                                 
+
+iqopt   irstrnt  ihfree     qwt
+  1      1      1        0.000500
+
+ rel.rms   dipole mom       Qxx      Qyy      Qzz
+    0.14530   2.28137 -17.53401  20.41958  -2.88557
+
+          Point charges before & after optimization
+    NO   At.No.    q0           q(opt)   IVARY  d(rstr)/dq 
+     1     7   0.000000      -0.812454    0    0.000611
+     2     6   0.000000       0.684202    0    0.000723
+     3     8   0.000000      -0.567719    0    0.000867
+     4     6   0.000000      -0.116920    0    0.003250
+     5     6   0.000000      -0.110856    0    0.003349
+     6     6   0.000000      -0.084378    0    0.003821
+     7     6   0.000000      -0.061298    0    0.004263
+     8    17   0.000000      -0.020316    0    0.004900
+     9    16   0.000000       0.025155    0    0.004849
+    10     1   0.000000       0.384072    0    0.000000
+    11     1   0.000000       0.355704    0    0.000000
+    12     1   0.000000       0.171194    0    0.000000
+    13     1   0.000000       0.153614    0    0.000000
+
+        Statistics of the fitting:
+  The initial sum of squares (ssvpot)                      0.230
+  The residual sum of squares (chipot)                     0.005
+  The std err of estimate (sqrt(chipot/N))               0.00231
+  ESP relative RMS (SQRT(chipot/ssvpot))                 0.14530
+
+ Dipole Moment (Debye)=   2.28137

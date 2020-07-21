@@ -1,0 +1,58 @@
+### Linker file for use with Thrombin inhibitors ###
+
+init
+name Primary Peptide
+linker CNC(=O)C
+terminal off
+# NME cap
+lcap NC
+lanc 2 3 4
+lancmap 1 2 -1
+# ACE cap
+rcap C(=O)C
+ranc 0 1
+rancmap -1 5
+breakring off
+# Alanine surrogate
+surrogate NC(=O)[C@@H](C)NC(=O)
+s_lanc 0
+s_ranc 6 7
+end
+
+init
+name  Secondary Peptide
+linker CN(C)C(=O)C
+terminal off
+# NME2 cap
+lcap N(C)C
+lanc 3 4 5
+lancmap 1 2 -1
+# ACE
+rcap C(=O)C
+ranc 0 1 2
+rancmap -1 5 -1
+breakring off
+# Me-Alanine surrogate
+surrogate NC(=O)[C@@H](C)N(C)C(=O)
+s_lanc 0
+s_ranc 7 8
+end
+
+init
+name Primary Sulfonamide
+linker CNS(=O)(=O)C
+terminal off
+# Sulfo-NME cap
+lcap NC
+lanc 2 3 4 5
+lancmap 1 2 -1 -1
+# Sulfo-ACE cap
+rcap S(=O)(=O)C
+ranc 0 1
+rancmap -1 6
+breakring off
+# Sulfon amide Alanine
+surrogate NS(=O)(=O)[C@@H](C)NS(=O)(=O)
+s_lanc 0
+s_ranc 7 8 9
+end
