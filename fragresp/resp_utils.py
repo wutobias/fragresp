@@ -722,7 +722,8 @@ def resp_surrogate(conn_surr,
                                "-c", "rc", 
                                "-at", "sybyl",
                                "-pf", "y",
-                               "-dr", "no"]
+                               "-dr", "no",
+                               "-j", "5"]
         call(ante_args, stdout=stdout, stderr=stderr)
 
     return mol2_out_path, mol_qm_surr, matches

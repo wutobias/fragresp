@@ -5,7 +5,7 @@ def parse_args():
 
     parser = argparse.ArgumentParser(
             description="Executable for FragResp Version 0.4. A processing pipeline for automated derivation of RESP charges \
-within large sets of molecules. Written by Tobias Hüfner, tobias.wulsdorf@gmail.com")
+within large sets of molecules. See the tutorial for more information. Written by Tobias Hüfner, thuefner@ucsd.edu")
 
     only_decompose ="Only used in --mode==decompose."
     only_conformers="Only used in --mode=conformers."

@@ -320,7 +320,7 @@ def preprocess_esp(log_path, stdout=None, stderr=None):
         stderr=open(os.devnull, 'w')
 
     mainpath          = os.path.splitext(log_path)[0]
-    ante_args_general = ["-fi", "gout", "-pf", "y", "-at", "sybyl", "-dr", "no"]
+    ante_args_general = ["-fi", "gout", "-pf", "y", "-at", "sybyl", "-dr", "no", "-j", "5"]
 
     mol2_path   = mainpath+".mol2"
     esp_path    = mainpath+".esp"
