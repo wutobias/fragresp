@@ -14,7 +14,7 @@ and University of Marburg, Institute for Pharmaceutical Chemistry
 __author__     = "Tobias Hüfner"
 __license__    = "MIT"
 __maintainer__ = "Tobias Hüfner"
-__email__      = "tobias.wulsdorf@gmail.com"
+__email__      = "thuefner@ucsd.edu"
 
 #from fragresp import decomposition
 #from fragresp import data_strc
