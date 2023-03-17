@@ -1,3 +1,11 @@
+# [WIP] Adding things, fixing things
+
+* Better support for different queuing systems
+* Rdkit conformer pipeline
+* Psi4 support
+* Better handling of complicated charge constraints
+
+
 ## FragResp
 
 FragResp is a command line tool (in theory also usable through python, please see below) that facilitates the semi-automated calculation of RESP partial charges with minimized conformation bias. The key steps are: 
