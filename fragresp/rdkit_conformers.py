@@ -15,13 +15,7 @@ def make_g09(name,
              rdmol,
              conf_i,
              nproc=8,
-             mem=1900,
-             queue='marc2'):
-
-    queue_choices = ['marc2', 'slurm', 'condor', 'none', 'bio']
-    if queue not in queue_choices:
-        print( "queue %s not known. Using queue 'none'.")
-        queue = 'none'
+             mem=1900):
 
     radius_dict = {'I'  : 1.98}
 
@@ -58,9 +52,8 @@ def make_g09(name,
             com_crds += '%5.10f ' %crd
         com_crds += '\n'
 
-    if queue in ['none', 'slurm', 'bio']:
-        com_opt += '%%nproc=%d\n'   %nproc
-        com_opt += '%%mem=%dMB\n'   %mem
+    com_opt += '%%nproc=%d\n'   %nproc
+    com_opt += '%%mem=%dMB\n'   %mem
     com_opt += '%%chk=%s.chk\n' %name
     if has_user_basisset:
         com_opt += '#B3LYP/GenECP 5d 7f pseudo=read '
@@ -93,9 +86,8 @@ def make_g09(name,
     com_opt += com_basis
     com_opt += '\n'
 
-    if queue in ['none', 'slurm', 'bio']:
-        com_esp += '%%nproc=%d\n'   %nproc
-        com_esp += '%%mem=%dMB\n'   %mem
+    com_esp += '%%nproc=%d\n'   %nproc
+    com_esp += '%%mem=%dMB\n'   %mem
     com_esp += '%%chk=%s.chk\n'    %name
     if has_user_basisset:
         com_esp += '#HF/GenECP 5d 7f pseudo=read '
@@ -223,7 +215,7 @@ def prep_qm(frag_list,
     if not os.path.exists(qm_dir):
         os.mkdir(qm_dir)
 
-    if queue:
+    if queue == "none":
         g09_cmd = 'g09'
         psi4_cmd = 'run_psi4'
     else:
@@ -278,21 +270,21 @@ def prep_qm(frag_list,
             if not os.path.exists(fragpath):
                 os.mkdir(fragpath)        
 
-            com_opt, com_esp = make_g09(fragname, frag, conf_i, nproc, mem, queue)
+            com_opt, com_esp = make_g09(fragname, frag, conf_i, nproc, mem)
 
             f = logger(fragpath+"/"+fragname+"_opt.com")
             f.log(com_opt)
             f.close()
-            opt_batch_file.log("%s %s" %(g09_cmd, subpath+"/"+fragname+"_opt.com"))
+            opt_batch_file.log("%s %s %d" %(g09_cmd, subpath+"/"+fragname+"_opt.com", nproc))
             del f
 
             f = logger(fragpath+"/"+fragname+"_esp.com")
             f.log(com_esp)
             f.close()
-            esp_batch_file.log("%s %s" %(g09_cmd, subpath+"/"+fragname+"_esp.com"))
+            esp_batch_file.log("%s %s %d" %(g09_cmd, subpath+"/"+fragname+"_esp.com", nproc))
             del f
 
-            psi4_batch_file.log("%s %s" %(psi4_cmd, subpath+"/"+fragname+"_opt.com"))
+            psi4_batch_file.log("%s %s %d" %(psi4_cmd, subpath+"/"+fragname+"_opt.com", nproc))
 
         if write_sdf:
             w = Chem.SDWriter(mainpath+"/"+"f%d.sdf" %frag_i)

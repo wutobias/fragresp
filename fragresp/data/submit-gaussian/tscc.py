@@ -41,7 +41,7 @@ g09 {COM}
         fopen.write(slurm_str)
 
     subprocess.call(
-        ["sbatch", TMPPATH]
+        ["qsub", TMPPATH]
         )
 
 if __name__ == "__main__":

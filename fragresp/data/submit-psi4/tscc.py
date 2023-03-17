@@ -28,8 +28,8 @@ def main():
 source /home/thuefner/init_conda.sh
 conda activate psi4
 
-export OMP_NUM_THREADS=${NPROC}
-export MKL_NUM_THREADS=${NPROC}
+export OMP_NUM_THREADS={NPROC}
+export MKL_NUM_THREADS={NPROC}
 
 cd {CALCPATH}
 
@@ -44,7 +44,7 @@ run_psi4 {COM}
         fopen.write(slurm_str)
 
     subprocess.call(
-        ["sbatch", TMPPATH]
+        ["qsub", TMPPATH]
         )
 
 if __name__ == "__main__":

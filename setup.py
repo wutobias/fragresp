@@ -18,5 +18,6 @@ setup(
                 'run_fragresp=fragresp.scripts.run_fragresp:entry_point',
                 'run_psi4=fragresp.scripts.run_psi4:entry_point'
             ]
-        }
+        },
+    include_package_data=True
     )
