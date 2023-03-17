@@ -145,17 +145,12 @@ def prep_qm(frag_list,
             write_mol2=True,
             nproc=2,
             mem=1900,
-            queue='marc2',
+            queue='none',
             qm_dir=".",
             opt_batch="submit_opt_g09.sh",
             esp_batch="submit_esp_g09.sh",
             logfile="prep_qm.log",
             include_list=None):
-
-    queue_choices = ['marc2', 'slurm', 'condor', 'none']
-    if queue not in queue_choices:
-        print ("queue %s not known. Using queue 'none'.")
-        queue = 'none'
 
     conf_list = list()
 
@@ -168,14 +163,11 @@ def prep_qm(frag_list,
     if not os.path.exists(qm_dir):
         os.mkdir(qm_dir)
 
-    if queue == 'marc2':
-        g09_cmd = "subg09 -p %d -m %d -cc" %(nproc, mem)
-    elif queue == 'slurm':
-        g09_cmd = 'subg09_slurm.sh %d' %nproc
-    elif queue == 'condor':
-        g09_cmd = 'subg09_condor.sh 1'
-    else:
+    if queue:
         g09_cmd = 'g09'
+    else:
+        from pkg_resources import resource_filename
+        g09_cmd = resource_filename("fragresp.data", f"submit-scripts/{queue}.py")
 
     opt_batch_file = logger(qm_dir+"/"+opt_batch)
     esp_batch_file = logger(qm_dir+"/"+esp_batch)

@@ -1,13 +1,19 @@
 import os
-from openbabel import openbabel as ob
-from openbabel import pybel as pb
+
+import numpy as np
 
 from rdkit import Chem
+from rdkit.Chem import rdDistGeom
+from rdkit.Chem import AllChem
+from rdkit.Chem import rdMolAlign
 from fragresp.utils import logger
 from fragresp.constants import max_confs
 
+from pkg_resources import resource_filename
+
 def make_g09(name,
-             conf,
+             rdmol,
+             conf_i,
              nproc=8,
              mem=1900,
              queue='marc2'):
@@ -29,9 +35,11 @@ def make_g09(name,
     helement_list     = list()
     has_user_basisset = False
 
-    for atm in ob.OBMolAtomIter(conf):
+    conformer = rdmol.GetConformer(conf_i)
+    positions = conformer.GetPositions()
+    for atm in rdmol.GetAtoms():
         atm_number  = atm.GetAtomicNum()
-        element     = ob.GetSymbol(atm_number)
+        element     = atm.GetSymbol()
         if atm_number > 35:
             if not element in helement_list:
                 helement_list.append(element)
@@ -43,7 +51,7 @@ def make_g09(name,
         com_crds   += '   '
         com_crds   += element
         com_crds   += '   '
-        crds        = [atm.GetX(), atm.GetY(), atm.GetZ()]
+        crds        = positions[atm.GetIdx()].tolist()
         for crd in crds:
             if crd > 0.:
                 com_crds += " "
@@ -86,8 +94,8 @@ def make_g09(name,
     com_opt += '\n'
 
     if queue in ['none', 'slurm', 'bio']:
-        com_opt += '%%nproc=%d\n'   %nproc
-        com_opt += '%%mem=%dMB\n'   %mem
+        com_esp += '%%nproc=%d\n'   %nproc
+        com_esp += '%%mem=%dMB\n'   %mem
     com_esp += '%%chk=%s.chk\n'    %name
     if has_user_basisset:
         com_esp += '#HF/GenECP 5d 7f pseudo=read '
@@ -105,10 +113,12 @@ def make_g09(name,
     return com_opt, com_esp
 
 
-def filter_conformers(mol, limit=3, percentage=50.):
+def filter_conformers(rdmol, limit=3, percentage=50.):
     
     ### This is an (approximate) reimplementation of the ELF
     ### algorithm as implemented in the OpenEye Toolkits.
+
+    from scipy.spatial import distance
     
     ene_init = list()
     ene_elf  = list()
@@ -119,92 +129,88 @@ def filter_conformers(mol, limit=3, percentage=50.):
     elif percentage<0.:
         percentage=0.1
     
-    n_confs = mol.NumConformers()
-    mff     = ob.OBForceField.FindForceField("mmff94")
+    n_confs = rdmol.GetNumConformers()
+    mp = AllChem.MMFFGetMoleculeProperties(rdmol, mmffVariant='MMFF94s')
     for conf_i in range(n_confs):
-        mol.SetConformer(conf_i)
-        mff.Setup(mol)
-        mff.GetCoordinates(mol)
-        ene_init.append(mff.Energy())
+        mff = AllChem.MMFFGetMoleculeForceField(rdmol, mp, confId=conf_i)
+        ene_init.append(mff.CalcEnergy())
+
     confs_init = sorted(range(n_confs), key=ene_init.__getitem__)
     cut_1st    = int(n_confs*percentage)
     if cut_1st==0:
         cut_1st=1
     if cut_1st<limit:
         limit=cut_1st
-        
-    for a in ob.OBMolAtomIter(mol):
-        chg = a.GetPartialCharge()
-        if chg < 0.:
-            a.SetPartialCharge(chg*-1.)
+
+    charge_product = np.ones(
+        (
+            rdmol.GetNumAtoms(),
+            rdmol.GetNumAtoms()
+            ),
+        dtype=float,
+        )
+    for atom_i in range(rdmol.GetNumAtoms()):
+        q = mp.GetMMFFPartialCharge(atom_i)
+        charge_product[atom_i:] *= q
+        charge_product[:atom_i] *= q
+
     
-    sff = ob.OBForceField.FindForceField("mmff94")
     for conf_i in range(n_confs):
-        mol.SetConformer(confs_init[conf_i])
-        sff.Setup(mol)
-        sff.GetCoordinates(mol)
-        ene_elf.append(sff.Energy())
-        
+        conformer = rdmol.GetConformer(conf_i)
+        positions = conformer.GetPositions()
+        distance_matrix = distance.cdist(positions, positions)
+        idxs = np.tril_indices(rdmol.GetNumAtoms(), -1)
+        ene  = np.sum(
+            1./distance_matrix[idxs] * charge_product[idxs]
+            )
+        ene_elf.append(ene)
+
     confs_elf = sorted(range(n_confs), key=ene_elf.__getitem__)
     to_delete = sorted(confs_elf[limit:], reverse=True)
     for conf_i in to_delete:
-        mol.DeleteConformer(conf_i)
+        rdmol.RemoveConformer(conf_i)
 
 
-def generate_conformers(mol, optimize=True, conf_search='diverse'):
+def generate_conformers(rdmol, optimize=True):
 
-    if conf_search == 'diverse':
-        rmsd_cutoff    = 1.0
-        conf_cutoff    = max_confs
-        energy_cutoff  = 10.0
-        confab_verbose = False
+    param = rdDistGeom.ETKDGv2()
+    param.pruneRmsThresh = 0.5
+    cids = rdDistGeom.EmbedMultipleConfs(
+        rdmol, 
+        max_confs, 
+        param)
 
-        # Run Confab conformer generation
-        ### see also:
-        ### https://gist.github.com/kylebarlow/1756ea399ba6bfee3c2d3d054c17c3a3
-        cff = ob.OBForceField.FindForceField("mmff94")
-        cff.Setup(mol)
-        cff.DiverseConfGen(rmsd_cutoff, conf_cutoff, energy_cutoff, confab_verbose)
-        cff.GetConformers(mol)
-
-    else:
-        cs = ob.OBConformerSearch()
-        numConformers = max_confs
-        numChildren = 5
-        mutability = 5
-        convergence = 25
-        cs.Setup(mol,numConformers,numChildren,mutability,convergence)
-        cs.GetConformers(mol)
-        
     if optimize:
-        optimize_conformers(mol)
+        AllChem.MMFFOptimizeMoleculeConfs(
+            rdmol, 
+            numThreads=0, 
+            mmffVariant='MMFF94s'
+            )
 
 
-def optimize_conformers(mol):
+def optimize_conformers(rdmol):
         
-    n_confs  = mol.NumConformers()
-    mff      = ob.OBForceField.FindForceField("mmff94")
-    for conf_i in range(n_confs):
-        mol.SetConformer(conf_i)
-        mff.Setup(mol)
-        mff.SteepestDescent(100)
-        mff.GetCoordinates(mol)
+    AllChem.MMFFOptimizeMoleculeConfs(
+        rdmol, 
+        numThreads=0, 
+        mmffVariant='MMFF94s'
+        )
 
 
 def prep_qm(frag_list,
             overwrite,
             limit,
             percentage,
-            write_mol2=True,
+            write_sdf=True,
             nproc=8,
             mem=1900,
-            queue='marc2',
+            queue='none',
             qm_dir=".",
             opt_batch="submit_opt_g09.sh",
             esp_batch="submit_esp_g09.sh",
+            psi4_batch="submit_psi4.sh",
             logfile="prep_qm.log",
-            include_list=None,
-            use_psi4=False):
+            include_list=None):
 
     conf_list = list()
 
@@ -219,29 +225,28 @@ def prep_qm(frag_list,
 
     if queue:
         g09_cmd = 'g09'
+        psi4_cmd = 'run_psi4'
     else:
         from pkg_resources import resource_filename
-        g09_cmd = resource_filename("fragresp.data", f"submit-scripts/{queue}.py")
+        g09_cmd = resource_filename("fragresp.data", f"submit-gaussian/{queue}.py")
+        psi4_cmd = resource_filename("fragresp.data", f"submit-psi4/{queue}.py")
 
-    opt_batch_file = logger(qm_dir+"/"+opt_batch)
-    esp_batch_file = logger(qm_dir+"/"+esp_batch)
+    psi4_batch_file = logger(qm_dir+"/"+psi4_batch)
+    opt_batch_file  = logger(qm_dir+"/"+opt_batch)
+    esp_batch_file  = logger(qm_dir+"/"+esp_batch)
 
+    psi4_batch_file.log("#!/bin/bash")
+    psi4_batch_file.log()
     opt_batch_file.log("#!/bin/bash")
-    opt_batch_file.log()
-    opt_batch_file.log("_pwd=$PWD")
     opt_batch_file.log()
     esp_batch_file.log("#!/bin/bash")
     esp_batch_file.log()
-    esp_batch_file.log("_pwd=$PWD")
-    esp_batch_file.log()
-
-    obConversion = ob.OBConversion()
-    obConversion.SetInFormat("smi")
-    obConversion.SetOutFormat("mol2")
 
     for frag_i in include_list:
 
         frag = frag_list[frag_i]
+        Chem.SanitizeMol(frag)
+        frag = AllChem.AddHs(frag, addCoords=True)
 
         mainpath  = qm_dir+"/"+"frag%d" %frag_i
 
@@ -258,19 +263,13 @@ def prep_qm(frag_list,
         prep_log.log("Fragment %d" %frag_i)
         prep_log.log("Smi      %s" %smi)
         
-        pbmol = pb.readstring("smi", smi)
-        pbmol.make3D()
-        mol   = pbmol.OBMol
+        generate_conformers(frag)
+        prep_log.log("initial conformers: %d" %frag.GetNumConformers())
+        filter_conformers(frag, limit, percentage)
+        prep_log.log("filtered conformers:%d" %frag.GetNumConformers())
+        conf_list.append(frag.GetNumConformers())
 
-        generate_conformers(mol)
-        prep_log.log("initial conformers: %d" %mol.NumConformers())
-        filter_conformers(mol, limit, percentage)
-        prep_log.log("filtered conformers:%d" %mol.NumConformers())
-        conf_list.append(mol.NumConformers())
-
-        for conf_i in range(mol.NumConformers()):
-
-            mol.SetConformer(conf_i)
+        for conf_i in range(frag.GetNumConformers()):
 
             fragname = 'frag%d-conf%d' %(frag_i,conf_i)
 
@@ -279,26 +278,44 @@ def prep_qm(frag_list,
             if not os.path.exists(fragpath):
                 os.mkdir(fragpath)        
 
-            com_opt, com_esp = make_g09(fragname, mol, nproc, mem, queue)
+            com_opt, com_esp = make_g09(fragname, frag, conf_i, nproc, mem, queue)
 
             f = logger(fragpath+"/"+fragname+"_opt.com")
             f.log(com_opt)
             f.close()
-            opt_batch_file.log("cd %s" %subpath)
-            opt_batch_file.log("%s %s" %(g09_cmd, fragname+"_opt.com"))
-            opt_batch_file.log("cd $_pwd")
+            opt_batch_file.log("%s %s" %(g09_cmd, subpath+"/"+fragname+"_opt.com"))
             del f
 
             f = logger(fragpath+"/"+fragname+"_esp.com")
             f.log(com_esp)
             f.close()
-            esp_batch_file.log("cd %s" %subpath)
-            esp_batch_file.log("%s %s" %(g09_cmd, fragname+"_esp.com"))
-            esp_batch_file.log("cd $_pwd")
+            esp_batch_file.log("%s %s" %(g09_cmd, subpath+"/"+fragname+"_esp.com"))
             del f
 
-        if write_mol2:
-            obConversion.WriteFile(mol, mainpath+"/"+"f%d.mol2" %frag_i)
+            psi4_batch_file.log("%s %s" %(psi4_cmd, subpath+"/"+fragname+"_opt.com"))
+
+        if write_sdf:
+            w = Chem.SDWriter(mainpath+"/"+"f%d.sdf" %frag_i)
+            res = list()
+            mp = AllChem.MMFFGetMoleculeProperties(
+                frag, 
+                mmffVariant='MMFF94s'
+                )
+            for cid in range(frag.GetNumConformers()):
+                ff = AllChem.MMFFGetMoleculeForceField(
+                    frag, 
+                    mp, 
+                    confId=cid
+                    )
+                e = ff.CalcEnergy()
+                res.append((cid, e))
+            sorted_res = sorted(res, key=lambda x:x[1])
+            rdMolAlign.AlignMolConformers(frag)
+            for cid, e in sorted_res:
+                frag.SetProp('CID', str(cid))
+                frag.SetProp('Energy', str(e))
+                w.write(frag, confId=cid)
+            w.close()
 
         prep_log.log()
 
@@ -306,8 +323,10 @@ def prep_qm(frag_list,
 
     opt_batch_file.close()
     esp_batch_file.close()
+    psi4_batch_file.close()
 
     del opt_batch_file
     del esp_batch_file
+    del psi4_batch_file
 
     return conf_list

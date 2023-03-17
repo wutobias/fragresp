@@ -320,7 +320,7 @@ def preprocess_esp(log_path, stdout=None, stderr=None):
         stderr=open(os.devnull, 'w')
 
     mainpath          = os.path.splitext(log_path)[0]
-    ante_args_general = ["-fi", "gout", "-pf", "y", "-at", "sybyl", "-dr", "no", "-j", "5"]
+    ante_args_general = ["-fi", "gout", "-pf", "y", "-at", "sybyl", "-dr", "no", "-j", "4"]
 
     mol2_path   = mainpath+".mol2"
     esp_path    = mainpath+".esp"
@@ -342,7 +342,7 @@ def fix_groups(mol, verbose=False):
     """
 
     fix_dict = {
-    'nitro' : [Chem.MolFromSmiles("N([O-])[O-]"), Chem.MolFromSmiles("[N+](=O)[O-]")]
+        'nitro'       : [Chem.MolFromSmiles("N([O-])[O-]"), Chem.MolFromSmiles("[N+](=O)[O-]")],
     }
     for name, mol_replace in fix_dict.items():
         if mol.HasSubstructMatch(mol_replace[0]):

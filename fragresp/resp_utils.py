@@ -13,6 +13,9 @@ from fragresp.utils import preprocess_esp
 from fragresp.utils import canonicalize_tautomers
 from fragresp.utils import fix_groups
 
+from fragresp.gaussian_tools import get_energy
+from fragresp.constants import hartree_to_kcal
+
 class write_resp_in(object):
 
     def __init__(self):
@@ -58,6 +61,7 @@ class write_resp_in(object):
 
         self.stage              = 'resp1'
 
+        self.deactivate_groups  = False
         self.groups_frozen      = False
         self.noh_frozen         = False
         self.h_equiv            = False
@@ -347,36 +351,38 @@ class write_resp_in(object):
 
         _tmp_str = list()
 
-        group_index_list = np.arange(len(self._group_atom_list))
+        if not self.deactivate_groups:
 
-        for group_i in range(self._group_count):
+            group_index_list = np.arange(len(self._group_atom_list))
 
-            ### group_valids_bool is True whereever an atom is in 
-            ### the group with group id group_i.
-            ### group_valids_int gives the list indices of every atom
-            ### in self._group_atom_list that is in group group_i.
-            group_valids_bool = np.isin(self._group_id_list, group_i)
-            group_valids_int  = group_index_list[group_valids_bool]
+            for group_i in range(self._group_count):
 
-            group_size   = group_valids_int.shape[0]
-            group_charge = self._group_charge_list[group_i]
+                ### group_valids_bool is True whereever an atom is in 
+                ### the group with group id group_i.
+                ### group_valids_int gives the list indices of every atom
+                ### in self._group_atom_list that is in group group_i.
+                group_valids_bool = np.isin(self._group_id_list, group_i)
+                group_valids_int  = group_index_list[group_valids_bool]
 
-            _tmp_str.append(line_I5_F105.write([group_size, group_charge]))
-            _tmp_str.append('\n')
+                group_size   = group_valids_int.shape[0]
+                group_charge = self._group_charge_list[group_i]
 
-            atom_list = list()
+                _tmp_str.append(line_I5_F105.write([group_size, group_charge]))
+                _tmp_str.append('\n')
 
-            for valids_i in group_valids_int:
+                atom_list = list()
 
-                atom_i = self._group_atom_list[valids_i]
-                mol_id = self._group_mol_list[valids_i]
+                for valids_i in group_valids_int:
 
-                atom_list.append(mol_id+1)
-                atom_list.append(atom_i+1)
+                    atom_i = self._group_atom_list[valids_i]
+                    mol_id = self._group_mol_list[valids_i]
 
-            _tmp_str.append(line_16I5.write(atom_list))
+                    atom_list.append(mol_id+1)
+                    atom_list.append(atom_i+1)
 
-            _tmp_str.append('\n')
+                _tmp_str.append(line_16I5.write(atom_list))
+
+                _tmp_str.append('\n')
 
         _tmp_str.append('\n')
 
@@ -501,12 +507,13 @@ class write_resp_in(object):
             _tmp_str.append(' iqopt   = 1,\n')
             _tmp_str.append(' qwt     = 0.00500\n')
 
-            self.groups_frozen   = False
-            self.noh_frozen      = False
-            self.h_groups_frozen = False
-            self.h_equiv         = False
-            self.all_equiv       = True
-            self.unfreeze_all    = False
+            self.deactivate_groups = False
+            self.groups_frozen     = False
+            self.noh_frozen        = False
+            self.h_groups_frozen   = False
+            self.h_equiv           = False
+            self.all_equiv         = True
+            self.unfreeze_all      = False
 
         elif self.stage == 'resp2_surr':
 
@@ -516,12 +523,13 @@ class write_resp_in(object):
             _tmp_str.append(' iqopt   = 2,\n')
             _tmp_str.append(' qwt     = 0.00100\n')
 
-            self.groups_frozen   = True
-            self.noh_frozen      = True
-            self.h_groups_frozen = False
-            self.h_equiv         = True
-            self.all_equiv       = True
-            self.unfreeze_all    = False
+            self.deactivate_groups = False
+            self.groups_frozen     = True
+            self.noh_frozen        = True
+            self.h_groups_frozen   = False
+            self.h_equiv           = True
+            self.all_equiv         = True
+            self.unfreeze_all      = False
 
         elif self.stage == 'resp1':
 
@@ -531,12 +539,13 @@ class write_resp_in(object):
             _tmp_str.append(' iqopt   = 1,\n')
             _tmp_str.append(' qwt     = 0.00050\n')
 
-            self.groups_frozen   = False
-            self.noh_frozen      = False
-            self.h_groups_frozen = False
-            self.h_equiv         = False
-            self.all_equiv       = True
-            self.unfreeze_all    = False
+            self.deactivate_groups = False
+            self.groups_frozen     = False
+            self.noh_frozen        = False
+            self.h_groups_frozen   = False
+            self.h_equiv           = False
+            self.all_equiv         = True
+            self.unfreeze_all      = False
 
         elif self.stage == 'resp2':
 
@@ -546,12 +555,13 @@ class write_resp_in(object):
             _tmp_str.append(' iqopt   = 2,\n')
             _tmp_str.append(' qwt     = 0.00100\n')
 
-            self.groups_frozen   = False
-            self.noh_frozen      = True
-            self.h_groups_frozen = False
-            self.h_equiv         = True
-            self.all_equiv       = True
-            self.unfreeze_all    = False
+            self.deactivate_groups = False
+            self.groups_frozen     = False
+            self.noh_frozen        = True
+            self.h_groups_frozen   = False
+            self.h_equiv           = True
+            self.all_equiv         = True
+            self.unfreeze_all      = False
 
         _tmp_str.append('\n')
         _tmp_str.append(' &end')
@@ -579,6 +589,7 @@ def resp_surrogate(conn_surr,
     surr_conf_dict,
     surr_path_main,
     conn_i,
+    energy_weighting,
     stdout,
     stderr,
     cap_site=None,
@@ -604,7 +615,25 @@ def resp_surrogate(conn_surr,
     if not os.path.exists(surr_path_resp):
         os.mkdir(surr_path_resp)
 
-    for conf_i in range(surr_conf_dict[conn_i]):
+    conformer_weights = list()
+    if energy_weighting:
+        for conf_i in range(surr_conf_dict[conn_i]):
+            conf_i_path = surr_path_main+"/conf%d/frag%d-conf%d_esp.log" %(conf_i, conn_i, conf_i)
+            energy_list         = list()
+            get_energy(conf_i_path, energy_list)
+            conformer_weights.append(
+                energy_list[-1] * hartree_to_kcal
+                )
+        min_energy = min(conformer_weights)
+        for idx in range(len(conformer_weights)):
+            conformer_weights[idx] -= min_energy
+            ### gas constant in cal/mol/K
+            conformer_weights[idx] = np.exp(-conformer_weights[idx]/(1.9872159 * 1.e-3 * 300.))
+    else:
+        for conf_i in range(surr_conf_dict[conn_i]):
+            conformer_weights.append(1.)
+
+    for idx, conf_i in enumerate(range(surr_conf_dict[conn_i])):
         conf_i_path = surr_path_main+"/conf%d/frag%d-conf%d_esp.log" %(conf_i, conn_i, conf_i)
         esp_path, mol2_path = preprocess_esp(conf_i_path)
         ### Match the mol2 structure obtained from the QM calculation
@@ -622,7 +651,12 @@ def resp_surrogate(conn_surr,
             raise Exception("Found %d atoms in substructure matche. Expected %d." %(len(matches[0]),\
                         mol_surr.GetNumAtoms()))
         esp_list.append(esp_path)
-        surr_resp_in.add_mol(mol_qm_surr, Chem.GetFormalCharge(mol_qm_surr), 1.0, "Conf %d" %conf_i)
+        surr_resp_in.add_mol(
+            mol_qm_surr, 
+            Chem.GetFormalCharge(mol_qm_surr), 
+            conformer_weights[idx], 
+            "Conf %d" %conf_i
+            )
         cat_esp(esp_list,surr_path_esp)
         ### Generate intermolecular restraints
         surr_resp_in.add_intermolecular(0,conf_i)
@@ -695,6 +729,7 @@ def resp_surrogate(conn_surr,
                            "-t", surr_path_resp+"/resp1.crg", 
                            "-p", surr_path_resp+"/punch1",
                            "-s", surr_path_resp+"/esout1"]
+    print(" ".join(resp_args))
     call(resp_args, stdout=stdout, stderr=stderr)
 
     resp_args = [resp_exe, "-O", "-i", surr_path_resp2, 
@@ -704,6 +739,7 @@ def resp_surrogate(conn_surr,
                            "-t", surr_path_resp+"/resp2.crg", 
                            "-p", surr_path_resp+"/punch2",
                            "-s", surr_path_resp+"/esout2"]
+    print(" ".join(resp_args))
     call(resp_args, stdout=stdout, stderr=stderr)
 
     ### Finally, write mol2 files for each conformer with the 
@@ -723,7 +759,7 @@ def resp_surrogate(conn_surr,
                                "-at", "sybyl",
                                "-pf", "y",
                                "-dr", "no",
-                               "-j", "5"]
+                               "-j", "4"]
         call(ante_args, stdout=stdout, stderr=stderr)
 
     return mol2_out_path, mol_qm_surr, matches

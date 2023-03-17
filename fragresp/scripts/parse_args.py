@@ -67,7 +67,7 @@ come in future releases. It is possible to subsequently use different mol2lists 
         required=False,
         type=str,
         default="openeye",
-        choices=["openeye", "openbabel"],
+        choices=["openeye", "openbabel", "rdkit"],
         help='Pipeline for conformer generation. Note, that the OpenEye pipeline requires a valid licence file, stored under $OE_LICENSE. Default is \
 \'openeye\' (=use the OpenEye pipeline). %s' %only_conformers)
 
@@ -111,9 +111,8 @@ decomposition. %s' %only_conformers)
     parser.add_argument('-q', '--queue',
         required=False,
         type=str,
-        default="marc2",
-        choices=['marc2', 'slurm', 'condor', 'none'],
-        help='Queue used for gaussian09 jobs. Default is marc2. %s' %only_conformers)
+        default="none",
+        help='Queue used for gaussian09 jobs. Default is none (no queue). %s' %only_conformers)
 
     parser.add_argument('-fs', '--fittosurr',
         action='store_true',
@@ -141,6 +140,15 @@ will be stored as mol2 files in --remap_dir. The default for this option is off 
         type=str,
         default="remap_dir",
         help='Path for storing mol2 files after remapping fragment charges. %s' %only_resp)
+
+    parser.add_argument('-ew', '--energy_weighting',
+        action="store_true",
+        help='If given, weight conformers by Boltzmann factor during fitting. Only used in resp mode.')
+
+    parser.add_argument('--psi4',
+        action="store_true",
+        help='If given, use Psi4 esp data instead of Gaussian. Only used in resp mode'
+        )
 
     parser.add_argument('-v', '--verbose',
         action='store_true',

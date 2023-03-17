@@ -63,7 +63,7 @@ def check_opt(conf_dict,
 
         mainpath = qm_dir+"/"+"frag%d" %frag_i
 
-        ante_args_general = ["-fi", "gout", "-pf", "y", "-at", "sybyl", "-dr", "no", "-j", "5"]
+        ante_args_general = ["-fi", "gout", "-pf", "y", "-at", "sybyl", "-dr", "no", "-j", "4"]
 
         if not os.path.exists(mainpath):
             check_log.log(" ! Warning ! %s not found." %mainpath)

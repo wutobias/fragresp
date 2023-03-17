@@ -126,6 +126,7 @@ def main():
             args.bycharge,
             args.capsum,
             args.remapdir,
+            args.energy_weighting,  
             stdout,
             stderr)
 

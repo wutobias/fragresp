@@ -11,6 +11,8 @@ from fragresp.utils import preprocess_esp
 from fragresp.utils import fix_groups
 from fragresp.resp_utils import write_resp_in
 from fragresp.resp_utils import resp_surrogate
+from fragresp.gaussian_tools import get_energy
+from fragresp.constants import hartree_to_kcal
 
 ### Suppress warnings when loading mol2 files without
 ### hydrogen atoms into rdkit.
@@ -30,6 +32,7 @@ def resp_it_db(db,
             by_charge=True,
             capsum=True,
             remap_dir="remap_dir",
+            energy_weighting=False,
             stdout=None,
             stderr=None):
 
@@ -69,6 +72,7 @@ def resp_it_db(db,
                                                                 surr_conf_dict,
                                                                 surr_path_main,
                                                                 conn_i,
+                                                                energy_weighting,
                                                                 stdout,
                                                                 stderr,
                                                                 "None",
@@ -175,10 +179,26 @@ def resp_it_db(db,
                 if charge != Chem.GetFormalCharge(mol_frag):
                     continue
 
-            ### Check, if fragment represents more than
+            conformer_weights = list()
+            if energy_weighting:
+                for conf_i in range(frag_conf_dict[frag_i]):
+                    conf_i_path = frag_path_main+"/conf%d/frag%d-conf%d_esp.log" %(conf_i, frag_i, conf_i)
+                    energy_list         = list()
+                    get_energy(conf_i_path, energy_list)
+                    conformer_weights.append(
+                        energy_list[-1] * hartree_to_kcal
+                        )
+                min_energy = min(conformer_weights)
+                for idx in range(len(conformer_weights)):
+                    conformer_weights[idx] -= min_energy
+                    ### gas constant in cal/mol/K
+                    conformer_weights[idx] = np.exp(-conformer_weights[idx]/(1.9872159 * 1.e-3 * 300.))
+            else:
+                for conf_i in range(frag_conf_dict[frag_i]):
+                    conformer_weights.append(1.)
 
             frag_i_ref = frag_i_int
-            for conf_i in range(frag_conf_dict[frag_i]):
+            for idx, conf_i in enumerate(range(frag_conf_dict[frag_i])):
                 conf_i_path = frag_path_main+"/conf%d/frag%d-conf%d_esp.log" %(conf_i, frag_i, conf_i)
                 esp_path, mol2_path = preprocess_esp(conf_i_path)
                 ### Match the mol2 structure obtained from the QM calculation
@@ -190,7 +210,7 @@ def resp_it_db(db,
                 matches     = mol_qm_frag.GetSubstructMatches(mol_frag)
 
                 if len(matches) == 0:
-                    raise Exception("Did not any substructure matches.")
+                    raise Exception("Did not find any substructure matches.")
                 if len(matches) > 1:
                     raise Exception("Found %d substructure matches. Should be one only." %(len(matches)))
                 if len(matches[0]) != mol_frag.GetNumAtoms():
@@ -199,7 +219,7 @@ def resp_it_db(db,
                 esp_list.append(esp_path)
                 frag_resp_in.add_mol(mol_qm_frag,\
                                      Chem.GetFormalCharge(mol_qm_frag),\
-                                     1.0,\
+                                     conformer_weights[idx],\
                                      "Frag %d Conf %d, resp mol %d" %(frag_i,\
                                                                       conf_i,\
                                                                       frag_resp_in._mol_count+1))
@@ -622,13 +642,32 @@ def resp_it_db(db,
 
         if capsum:
             for cap_i in range(len(conn_lcap_atm_idxs_list)):
-                frag_resp_in.add_group(conn_lcap_atm_idxs_list[cap_i]+\
-                                       conn_rcap_atm_idxs_list[cap_i],
-                                       [conn_lcap_id_list[cap_i]]*len(conn_lcap_atm_idxs_list[cap_i])+\
-                                       [conn_rcap_id_list[cap_i]]*len(conn_rcap_atm_idxs_list[cap_i]),
+                _atm_idx_list = list()
+                _mol_idx_list = list()
+                if conn_lcap_atm_idxs_list:
+                    _atm_idx_list.extend(conn_lcap_atm_idxs_list[cap_i])
+                    _mol_idx_list.extend(
+                        [conn_lcap_id_list[cap_i]]*len(conn_lcap_atm_idxs_list[cap_i])
+                        )                    
+                if conn_rcap_atm_idxs_list:
+                    _atm_idx_list.extend(conn_rcap_atm_idxs_list[cap_i])
+                    _mol_idx_list.extend(
+                        [conn_rcap_id_list[cap_i]]*len(conn_rcap_atm_idxs_list[cap_i])
+                        )
+
+                frag_resp_in.add_group(_atm_idx_list,
+                                       _mol_idx_list,
                                        0.0)
-                frag_resp_in.add_free(conn_lcap_id_list[cap_i], conn_lcap_atm_idxs_list[cap_i])
-                frag_resp_in.add_free(conn_rcap_id_list[cap_i], conn_rcap_atm_idxs_list[cap_i])
+                if conn_lcap_id_list:
+                    frag_resp_in.add_free(
+                        conn_lcap_id_list[cap_i], 
+                        conn_lcap_atm_idxs_list[cap_i]
+                        )
+                if conn_rcap_id_list:
+                    frag_resp_in.add_free(
+                        conn_rcap_id_list[cap_i], 
+                        conn_rcap_atm_idxs_list[cap_i]
+                        )
 
             #print (frag_i_ref+1, "-->", frag_i)
 
@@ -651,6 +690,7 @@ def resp_it_db(db,
                                "-t", charge_path_main+"/resp1.crg", 
                                "-p", charge_path_main+"/punch1",
                                "-s", charge_path_main+"/esout1"]
+        print(" ".join(resp_args))
         call(resp_args, stdout=stdout, stderr=stderr)
 
         resp_args = [resp_exe, "-O", "-i", charge_path_resp2, 
@@ -660,6 +700,7 @@ def resp_it_db(db,
                                "-t", charge_path_main+"/resp2.crg", 
                                "-p", charge_path_main+"/punch2",
                                "-s", charge_path_main+"/esout2"]
+        print(" ".join(resp_args))
         call(resp_args, stdout=stdout, stderr=stderr)
 
         all_charges = list()
@@ -729,7 +770,26 @@ def resp_it_db(db,
 
         mol_frag   = db.get_mol(mol_i)
 
-        for conf_i in range(mol_conf):
+
+        conformer_weights = list()
+        if energy_weighting:
+            for conf_i in range(mol_conf):
+                conf_i_path = mol_path_main+"/conf%d/frag%d-conf%d_esp.log" %(conf_i, mol_i, conf_i)
+                energy_list         = list()
+                get_energy(conf_i_path, energy_list)
+                conformer_weights.append(
+                    energy_list[-1] * hartree_to_kcal
+                    )
+            min_energy = min(conformer_weights)
+            for idx in range(len(conformer_weights)):
+                conformer_weights[idx] -= min_energy
+                ### gas constant in cal/mol/K
+                conformer_weights[idx] = np.exp(-conformer_weights[idx]/(1.9872159 * 1.e-3 * 300.))
+        else:
+            for conf_i in range(mol_conf):
+                conformer_weights.append(1.)
+
+        for idx, conf_i in enumerate(range(mol_conf)):
             conf_i_path = mol_path_main+"/conf%d/frag%d-conf%d_esp.log" %(conf_i, mol_i, conf_i)
             esp_path, mol2_path = preprocess_esp(conf_i_path)
             ### Match the mol2 structure obtained from the QM calculation
@@ -749,7 +809,7 @@ def resp_it_db(db,
             esp_list.append(esp_path)
             frag_resp_in.add_mol(mol_qm_frag,\
                                  Chem.GetFormalCharge(mol_qm_frag),\
-                                 1.0,\
+                                 conformer_weights[idx],\
                                  "Mol %d Conf %d" %(mol_i,conf_i))
             ### Generate intermolecular restraints
             frag_resp_in.add_intermolecular(0, frag_i_int)
@@ -773,6 +833,7 @@ def resp_it_db(db,
                                "-t", mol_path_resp+"/resp1.crg", 
                                "-p", mol_path_resp+"/punch1",
                                "-s", mol_path_resp+"/esout1"]
+        print(" ".join(resp_args))
         call(resp_args, stdout=stdout, stderr=stderr)
 
         resp_args = [resp_exe, "-O", "-i", mol_path_resp2, 
@@ -782,6 +843,7 @@ def resp_it_db(db,
                                "-t", mol_path_resp+"/resp2.crg", 
                                "-p", mol_path_resp+"/punch2",
                                "-s", mol_path_resp+"/esout2"]
+        print(" ".join(resp_args))
         call(resp_args, stdout=stdout, stderr=stderr)
 
         all_charges = list()

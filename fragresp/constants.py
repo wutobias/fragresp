@@ -7,3 +7,5 @@ kbT_kcal        = kb_kcal*StandardTemp
 
 CHI_TETRAHEDRAL_CW  = Chem.ChiralType.CHI_TETRAHEDRAL_CW
 CHI_TETRAHEDRAL_CCW = Chem.ChiralType.CHI_TETRAHEDRAL_CCW
+
+max_confs = 10

@@ -21,7 +21,8 @@ def which(program):
 ante_exe    = which("antechamber")
 respgen_exe = which("respgen")
 espgen_exe  = which("espgen")
-resp_exe    = which("resp")
+#resp_exe    = which("resp")
+resp_exe    = which("py_resp.py")
 
 if ante_exe == None:
     raise Warning("antechamber not found")

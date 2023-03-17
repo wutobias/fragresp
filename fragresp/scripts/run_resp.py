@@ -12,6 +12,7 @@ def resp(database,
     by_charge,
     capsum,
     remap_dir,
+    energy_weighting,
     stdout,
     stderr):
 
@@ -66,4 +67,4 @@ def resp(database,
 
     resp_it_db(db, frag_dir, frag_count_dict, surr_cap_dir, surr_count_dict,
         mol_dir, mol_count_dict, fit_to_surr, remap, by_charge, capsum, 
-        remap_dir, stdout, stderr)
+        remap_dir, energy_weighting, stdout, stderr)

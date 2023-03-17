@@ -1,5 +1,7 @@
 import pickle
 from collections import OrderedDict
+from rdkit import Chem
+from openff.toolkit.topology import Molecule
 
 def conformers(database, 
                 add_db, 
@@ -16,6 +18,8 @@ def conformers(database,
 
     if pipeline=='openbabel':
         from fragresp.babel_conformers import prep_qm
+    elif pipeline=='rdkit':
+        from fragresp.rdkit_conformers import prep_qm
     else:
         from fragresp.oe_conformers import prep_qm
 
@@ -45,7 +49,8 @@ def conformers(database,
                         percentage,
                         qm_dir=frag_dir, 
                         logfile=fraglog,
-                        queue=queue)
+                        queue=queue,
+                        )
 
     if len(include_list_conn)>0:
         surr_count = prep_qm(db.get_surr_cap_list(),
@@ -55,7 +60,8 @@ def conformers(database,
                             qm_dir=surr_cap_dir, 
                             logfile=surrlog,
                             include_list=include_list_conn,
-                            queue=queue)
+                            queue=queue,
+                            )
     
     if len(include_list_mol)>0:
         mol_count = prep_qm(db.get_mol_list(),
@@ -65,12 +71,14 @@ def conformers(database,
                             qm_dir=mol_dir, 
                             logfile=mollog,
                             include_list=include_list_mol,
-                            queue=queue)
+                            queue=queue,
+                            )
 
     if overwrite:
         with open(frag_count_path, 'w') as f:
             for i, c in enumerate(frag_count):
                 f.write("%d %d\n" %(i,c))
+
 
         if len(include_list_conn)>0:
             with open(surr_count_path, 'w') as f:
